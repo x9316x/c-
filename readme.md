@@ -1,0 +1,1 @@
+This is practical task № 1.
