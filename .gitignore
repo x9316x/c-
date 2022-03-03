@@ -131,3 +131,7 @@ $RECYCLE.BIN/
 .DS_Store
 
 _NCrunch*
+
+# .vscode
+.vscode
+с_sharp_practical_task_1.csproj
