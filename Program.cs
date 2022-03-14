@@ -1,5 +1,7 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Здравствуйте Денис, доброго времени суток!");
+﻿Console.WriteLine("Здравствуйте Денис, доброго времени суток!");
+
+/*
+First practical work. (Task 2, 4, 6, 8)
 
 // Task 2: Напишите программу, которая на вход принимает два числа и выдаёт, какое число большее, а какое меньшее.
 Console.WriteLine("Ищем наибольшее из двух чисел.");
@@ -89,3 +91,4 @@ while(count < task8_variable1)
 Console.WriteLine();
 
 Console.Write("Спасибо за внимание!");
+*/
