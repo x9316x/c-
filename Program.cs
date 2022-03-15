@@ -24,19 +24,20 @@ Console.WriteLine(invertedNumber);
 Console.WriteLine("Отлично! Давайте теперь выводит третью цифру заданного числа, если она конечно существует!");
 
 Console.WriteLine("Для этого давайте введём произвольное целое число:");
-int task13Variable1 = Convert.ToInt32(Console.ReadLine());
+string? task13Variable1 = Console.ReadLine();
 
-if(task13Variable1 < 100)
+if(task13Variable1 is not null)
 {
-    Console.WriteLine("Упс, третьего числа не существует!");
-}
-else
-{
-    while()
+    if((task13Variable1.Length < 3))
     {
-        
+        Console.WriteLine("Упс, третьего числа не существует!");
+    }
+    else
+    {
+        Console.WriteLine(task13Variable1[2]);
     }
 }
+
 
 // Task 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
 Console.WriteLine("");
