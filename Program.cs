@@ -38,9 +38,18 @@ if(task13Variable1 is not null)
     }
 }
 
-
 // Task 15: Напишите программу, которая принимает на вход цифру, обозначающую день недели, и проверяет, является ли этот день выходным.
-Console.WriteLine("");
+Console.WriteLine("Идём дальше! Введите цифру, обозначающую день недели:");
+int task15Variable1 = Convert.ToInt32(Console.ReadLine());
+
+if((task15Variable1 % 7 == 0) | ((task15Variable1 + 1) % 7 == 0))
+{
+    Console.WriteLine("Ура, это день выходной!");
+}
+else
+{
+    Console.WriteLine("Будний день, продолжаем работу.");
+}
 
 // Task  19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 Console.WriteLine("");
