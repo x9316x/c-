@@ -52,7 +52,7 @@ else
 }
 
 Console.WriteLine("Отличная работа! Приступим к третьей практической работе!");
-*/
+
 // Task  19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 Console.WriteLine("Проверим, является ли пятизначное число палиндромом");
 
@@ -67,10 +67,36 @@ else
 {
     Console.WriteLine("Введённое число не является палиндромом!");
 }
-
+*/
 
 // Task  21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
-Console.WriteLine("");
+Console.WriteLine("Далее найдём расстояние между двумя точками в трёхмерном пространстве");
+
+int[] dotA = new int[2];
+
+int[] dotB = new int[2];
+
+int task21Index1 = 0;
+
+int task21Index2 = 0;
+
+Console.WriteLine("Введите первую точку:");
+
+while(task21Index1 < 3)
+{
+    dotA[task21Index1] = Convert.ToInt32(Console.ReadLine());
+    task21Index1++;
+}
+
+Console.WriteLine("Введите вторую точку:");
+
+while(task21Index2 < 3)
+{
+    dotA[task21Index2] = Convert.ToInt32(Console.ReadLine());
+    task21Index2++;
+}
+
+
 
 /* Task  23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 3 -> 1, 8, 27.
