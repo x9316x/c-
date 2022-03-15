@@ -56,7 +56,7 @@ Console.WriteLine("Отличная работа! Приступим к трет
 // Task  19: Напишите программу, которая принимает на вход пятизначное число и проверяет, является ли оно палиндромом.
 Console.WriteLine("Проверим, является ли пятизначное число палиндромом");
 
-Console.WriteLine("Для этого введите пятичначное число:");
+Console.WriteLine("Для этого введите пятизначное число:");
 int task19Variable1 = Convert.ToInt32(Console.ReadLine());
 
 if((task19Variable1 % 10 == task19Variable1 /10000) & ((task19Variable1 / 1000) % 10 == (task19Variable1 % 100) / 10))
@@ -106,7 +106,22 @@ Console.WriteLine(distance);
 3 -> 1, 8, 27.
 5 -> 1, 8, 27, 64, 125
 */
-Console.WriteLine("");
+Console.WriteLine("В следующем задании составим таблюцу кубов числе от 1 до N");
+
+Console.WriteLine("Введите число N:");
+int task23VariableN = Convert.ToInt32(Console.ReadLine());
+
+int task23Index1 = 0;
+
+int[] task23Array = new int[task23VariableN];
+
+while(task23Index1 < task23VariableN)
+{
+    task23Array[task23Index1] = (task23Index1 + 1) * (task23Index1 + 1) * (task23Index1 + 1);
+    Console.WriteLine((task23Index1 + 1) + " -> " + (task23Array[task23Index1]));
+    task23Index1++;
+}
+
 
 /*First practical work. (Task 2, 4, 6, 8)
 
