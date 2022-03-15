@@ -67,14 +67,13 @@ else
 {
     Console.WriteLine("Введённое число не является палиндромом!");
 }
-*/
 
 // Task  21: Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
 Console.WriteLine("Далее найдём расстояние между двумя точками в трёхмерном пространстве");
 
-int[] dotA = new int[2];
+int[] dotA = new int[3];
 
-int[] dotB = new int[2];
+int[] dotB = new int[3];
 
 int task21Index1 = 0;
 
@@ -92,11 +91,16 @@ Console.WriteLine("Введите вторую точку:");
 
 while(task21Index2 < 3)
 {
-    dotA[task21Index2] = Convert.ToInt32(Console.ReadLine());
+    dotB[task21Index2] = Convert.ToInt32(Console.ReadLine());
     task21Index2++;
 }
 
+double distance = Math.Sqrt((dotB[0] - dotA[0]) * (dotB[0] - dotA[0]) + (dotB[1] - dotA[1]) * (dotB[1] - dotA[1]) + (dotB[2] - dotA[2]) * (dotB[2] - dotA[2]));
 
+Console.WriteLine("Расстояние между точками в трёхмерном пространстве:");
+Console.WriteLine(distance);
+
+*/
 
 /* Task  23: Напишите программу, которая принимает на вход число (N) и выдаёт таблицу кубов чисел от 1 до N.
 3 -> 1, 8, 27.
