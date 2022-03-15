@@ -115,11 +115,21 @@ int task23Index1 = 0;
 
 int[] task23Array = new int[task23VariableN];
 
+Console.Write((task23VariableN) + " -> ");
+
 while(task23Index1 < task23VariableN)
 {
     task23Array[task23Index1] = (task23Index1 + 1) * (task23Index1 + 1) * (task23Index1 + 1);
-    Console.WriteLine((task23Index1 + 1) + " -> " + (task23Array[task23Index1]));
+    Console.Write((task23Array[task23Index1]));
     task23Index1++;
+    if(task23Index1 < (task23VariableN))
+    {
+        Console.Write(", ");
+    }
+    else
+    {
+        Console.Write(".");
+    }
 }
 
 
