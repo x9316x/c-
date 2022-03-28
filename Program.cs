@@ -1,4 +1,95 @@
-﻿/*Second and third practical work. (Task 2, 4, 6, 8)
+﻿// Task 25: Напишите цикл, который принимает на вход два натуральных числа (A и B) и возводит число A в степень B.
+
+int Method1Task25(int a, int b)
+{
+    if(b < 2)
+    {
+        if(b < 1)
+        {
+            return 1;
+        }
+        else
+        {
+            return a;
+        }
+    }
+    else
+    {
+        int result = a;
+        for(int i = 1; i < b; i++)
+        {
+            result = result * a;
+        }
+
+        return result;
+    }
+}
+
+int task29 = Method1Task25(2, 6);
+Console.WriteLine(task29);
+
+// Task 27: Напишите программу, которая принимает на вход число и выдаёт сумму цифр в числе.
+
+int Method1Task27(int a)
+{
+    int m = 0;
+
+    while(a > 0)
+    {
+        m = m + a % 10;
+        a = a / 10;
+    }
+
+    return m;
+
+}
+
+int task27 = Method1Task27(12345);
+Console.WriteLine(task27);
+
+// Task 29: Напишите программу, которая задаёт массив из 8 случайных целых чисел и выводит отсортированный по модулю массив.
+
+void Method1Task29()
+{
+    //задаем массив
+    int[] task29Array = new int[8];
+    
+    //заполняем массив случайными числами от -1 до 1
+    for(int i = 0; i < 8; i++)
+    {
+        task29Array[i] = new Random().Next(-9,9);
+    }
+
+    //сортируем массив по убыванию (по модулю)
+    for(int i = 0; i < 8; i++)
+    {
+        for(int j = 1; j < 8; j++)
+        {
+            int k = 0;
+
+            if(Math.Abs(task29Array[j]) > Math.Abs(task29Array[j-1]))
+            {
+                k = task29Array[j];
+                task29Array[j] = task29Array[j-1];
+                task29Array[j-1] = k;
+            }
+        }
+    }
+
+    //выводим массив
+    for(int i = 0; i < 8; i++)
+    {
+        Console.Write(task29Array[i] + " ");
+    }
+}
+
+Method1Task29();
+
+// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. Напишите программу, которая покажет количество чётных чисел в массиве.
+// Task 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+// Task 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+/*Second and third practical work. (Task 2, 4, 6, 8)
 
 Console.WriteLine("Здравствуйте Денис, доброго времени суток!");
 
