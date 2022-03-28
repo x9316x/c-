@@ -1,4 +1,6 @@
-﻿Console.WriteLine("Здравствуйте Денис, доброго времени суток!");
+﻿/*Second and third practical work. (Task 2, 4, 6, 8)
+
+Console.WriteLine("Здравствуйте Денис, доброго времени суток!");
 
 // Task 10: Напишите программу, которая принимает на вход трёхзначное число и на выходе выводит перевёрнутое число.
 Console.WriteLine("Приступаем ко второй практической работе!");
@@ -105,6 +107,8 @@ Console.WriteLine(distance);
 3 -> 1, 8, 27.
 5 -> 1, 8, 27, 64, 125
 */
+
+/*
 Console.WriteLine("В следующем задании составим таблюцу кубов числе от 1 до N");
 
 Console.WriteLine("Введите число N:");
@@ -131,6 +135,7 @@ while(task23Index1 < task23VariableN)
     }
 }
 
+*/
 
 /*First practical work. (Task 2, 4, 6, 8)
 
