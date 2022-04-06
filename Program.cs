@@ -40,7 +40,7 @@ void Method1Task34()
 }
 
 Method1Task34();
-*/
+
 // Task 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
 
 Console.WriteLine("Введите колличество элементов в массиве:");
@@ -82,8 +82,70 @@ void Method1Task36()
 }
 
 Method1Task36();
+*/
 
 // Task 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+
+Console.WriteLine("Введите колличество элементов в массиве:");
+int task38Variable1 = Convert.ToInt32(Console.ReadLine());
+
+void Method1Task38()
+{
+    //задаем массив
+    double[] task38Array = new double[task38Variable1];
+    
+    //заполняем массив случайными числами
+    for(int i = 0; i < task38Variable1; i++)
+    {
+        task38Array[i] =new Random().Next(-999, 999) + new Random().NextDouble();
+    }
+
+    double max = 0;
+    double min = 0;
+
+    //определяем из двух первых элементов минимальный и максимальный
+    //и записываем в в min и max соответственно
+    if(task38Array[0] > task38Array[1])
+    {
+        max = task38Array[0];
+        min = task38Array[1];
+    }
+    else
+    {
+        max = task38Array[1];
+        min = task38Array[0];
+    }
+
+    //сравниваем элементы массива, начиная с третьего
+    //с min и max
+    //и записываем в в min и max соответственно
+    for(int i = 2; i < task38Variable1; i++)
+    {
+        if(task38Array[i] > max)
+        {
+            max = task38Array[i];
+        }
+        else
+        {
+            if(task38Array[i] < min)
+            {
+                min = task38Array[i];
+            }
+        }
+    }
+
+    //выводим массив
+    for(int i = 0; i < task38Variable1; i++)
+    {
+        Console.Write(task38Array[i] + " ");
+    }
+
+    //разница между максимальным и минимальным элементами массива
+    Console.WriteLine();
+    Console.WriteLine(max - min);
+}
+
+Method1Task38();
 
 /*Fourth practical work. (Task 25, 27, 29)
 
