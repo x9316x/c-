@@ -84,6 +84,56 @@ Method1Task50();
 */
 // Task 52: Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
+void Method1Task52()
+{
+
+    Console.WriteLine("Введите m:");
+    int task52VariableM = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите n:");
+    int task52VariableN = Convert.ToInt32(Console.ReadLine());
+
+    //задаем массив
+    int[,] task52Array = new int[task52VariableM, task52VariableN];
+    
+    //заполняем массив случайными числами
+    for(int i = 0; i < task52VariableM; i++)
+    {
+        for(int j = 0; j < task52VariableN; j++)
+        {
+            task52Array[i,j] = new Random().Next(0,9);
+        }
+    }
+   
+    //выводим массив
+    for(int i = 0; i < task52VariableM; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task52VariableN; j++)
+        {
+            Console.Write(task52Array[i,j] + " ");
+        }
+    }
+
+    double sum = 0;
+    //считаем среднее арифметическое элементов в каждом столбце
+    for(int j = 0; j < task52VariableN; j++)
+    {
+        Console.WriteLine();
+        for(int i = 0; i < task52VariableM; i++)
+        {
+            sum = sum + task52Array[i,j];
+            if(i == task52VariableM - 1)
+            {
+                Console.Write("Среднее арифмитическое " + (sum / Convert.ToDouble(task52VariableM)) + " - " + (j+1) + " столбца");
+                sum = 0;
+            }
+        }
+    }
+}
+
+Method1Task52();
+
 // Task 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 //0, 7, 8, -2, -2 -> 2
 //-1, -7, 567, 89, 223-> 3
