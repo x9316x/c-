@@ -1,8 +1,262 @@
-﻿// Task 47: Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
-/*
-void Method1Task47()
+﻿// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+//Напишите программу, которая покажет количество чётных чисел в массиве.
+Console.WriteLine("Задача № 34. Зададим массив, заполненный случайными положительными трёхзначными числами:");
+Console.WriteLine("И посчитаем количество чётных чисел в массиве:");
+
+Console.WriteLine("Введите колличество элементов в массиве:");
+int task34Variable1 = Convert.ToInt32(Console.ReadLine());
+
+void Method1Task34()
 {
 
+    //задаем массив
+    int[] task34Array = new int[task34Variable1];
+    
+    //заполняем массив случайными числами от 100 до 999
+    for(int i = 0; i < task34Variable1; i++)
+    {
+        task34Array[i] = new Random().Next(100,999);
+    }
+
+    //счётчик
+    int count = 0;
+
+    //считаем колличество чётных чисел в массиве
+    for(int i = 0; i < task34Variable1; i++)
+    {
+        if(task34Array[i] % 2 == 0)
+        {
+            count++;
+        }
+    }
+
+    //выводим массив
+    for(int i = 0; i < task34Variable1; i++)
+    {
+        Console.Write(task34Array[i] + " ");
+    }
+
+    //вывоводим количество чётных элементов массива
+    Console.WriteLine();
+    Console.Write("Количество чётных элементов в массиве = " + count);
+}
+
+Method1Task34();
+Console.WriteLine();
+Console.WriteLine();
+
+// Task 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+Console.WriteLine("Задача № 36. Зададим массив, заполненный случайными числами");
+Console.WriteLine("Найдём сумму элементов, стоящих на нечётных позициях");
+
+Console.WriteLine("Введите колличество элементов в массиве:");
+int task36Variable1 = Convert.ToInt32(Console.ReadLine());
+
+void Method1Task36()
+{
+
+    //задаем массив
+    int[] task36Array = new int[task36Variable1];
+    
+    //заполняем массив случайными числами от -9 до 9
+    for(int i = 0; i < task36Variable1; i++)
+    {
+        task36Array[i] = new Random().Next(-9,9);
+    }
+
+    //считаем сумму
+    int sum = 0;
+
+    //суммируем элементы на нечётных позициях
+    for(int i = 0; i < task36Variable1; i++)
+    {
+        if(i % 2 != 0)
+        {
+            sum = sum + task36Array[i];
+        }
+    }
+
+    //выводим массив
+    for(int i = 0; i < task36Variable1; i++)
+    {
+        Console.Write(task36Array[i] + " ");
+    }
+
+    //вывоводим сумму элементов на нечётных позициях
+    Console.WriteLine();
+    Console.Write("Сумма элементов, стоящих на нечётных позициях = " + sum);
+}
+
+Method1Task36();
+Console.WriteLine();
+Console.WriteLine();
+
+// Task 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
+Console.WriteLine("Задача № 38. Зададим массив, заполненный случайными вещественными числами");
+Console.WriteLine("Найдём разницу между максимальным и минимальным элементов массива");
+
+Console.WriteLine("Введите колличество элементов в массиве:");
+int task38Variable1 = Convert.ToInt32(Console.ReadLine());
+
+void Method1Task38()
+{
+    //задаем массив
+    double[] task38Array = new double[task38Variable1];
+    
+    //заполняем массив случайными числами
+    for(int i = 0; i < task38Variable1; i++)
+    {
+        task38Array[i] = new Random().Next(-999, 999) + new Random().NextDouble();
+    }
+
+    double max = 0;
+    double min = 0;
+
+    //определяем из двух первых элементов минимальный и максимальный
+    //и записываем в в min и max соответственно
+    if(task38Array[0] > task38Array[1])
+    {
+        max = task38Array[0];
+        min = task38Array[1];
+    }
+    else
+    {
+        max = task38Array[1];
+        min = task38Array[0];
+    }
+
+    //сравниваем элементы массива, начиная с третьего
+    //с min и max
+    //и записываем в в min и max соответственно
+    for(int i = 2; i < task38Variable1; i++)
+    {
+        if(task38Array[i] > max)
+        {
+            max = task38Array[i];
+        }
+        else
+        {
+            if(task38Array[i] < min)
+            {
+                min = task38Array[i];
+            }
+        }
+    }
+
+    //выводим массив
+    for(int i = 0; i < task38Variable1; i++)
+    {
+        Console.Write(task38Array[i] + " ");
+    }
+
+    //разница между максимальным и минимальным элементами массива
+    Console.WriteLine();
+    Console.WriteLine("Разница между максимальным и минимальным элементами массива = " + (max - min));
+}
+
+Method1Task38();
+Console.WriteLine();
+Console.WriteLine();
+
+// Task 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+//0, 7, 8, -2, -2 -> 2
+//-1, -7, 567, 89, 223-> 3
+
+void Method1Task41()
+{
+    Console.WriteLine("Задача № 41");
+    Console.WriteLine("Введите число М:");
+    int task41VariableМ = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите с клавиатуры " + task41VariableМ + " чисел");
+    //задаем массив
+    int[] task34Array = new int[task41VariableМ];
+    
+    //счётчик
+    int count = 0;
+
+    //заполняем массив и считаем количество элементов больше 0
+    for(int i = 0; i < task41VariableМ; i++)
+    {
+        task34Array[i] = Convert.ToInt32(Console.ReadLine());
+        if(task34Array[i] > 0)
+        {
+            count++;
+        }
+    }
+
+    //выводим ответ
+    Console.WriteLine("Посчитаем, сколько чисел больше 0 мы ввели:");
+
+    for(int i = 0; i < task41VariableМ; i++)
+    {
+        Console.Write(task34Array[i]);
+        if(i == task41VariableМ - 1)
+        {
+             Console.Write(" -> " + count);
+        }
+        else
+        {
+             Console.Write(", ");
+        }
+    }
+
+}
+
+Method1Task41();
+Console.WriteLine();
+Console.WriteLine();
+
+// Task 43. Напишите программу, которая найдёт точку пересечения двух прямых, 
+//заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
+//значения b1, k1, b2 и k2 задаются пользователем.
+//b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
+
+void Method1Task43()
+{
+    Console.WriteLine("Задача № 43. Пересекающиеся прямые");
+    Console.WriteLine("Введите число k1:");
+    int task41Variablek1 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите число k2:");
+    int task41Variablek2 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите число b1:");
+    int task41Variableb1 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите число b2:");
+    int task41Variableb2 = Convert.ToInt32(Console.ReadLine());
+
+    for(double x = -999; x < 999; x = x + 0.1)
+    {
+        x = Math.Round(x, 2);
+
+        if((task41Variablek1 * x + task41Variableb1) == (task41Variablek2 * x + task41Variableb2))
+        {
+            Console.Write("b1= " + task41Variableb1 + ", k1= " + task41Variablek1);
+            Console.Write(", b2= " + task41Variableb2 + ", k2= " + task41Variablek2);
+            Console.Write(" -> (" + x + "; " + (task41Variablek1 * x + task41Variableb1) + ")");
+            break;
+        }
+        else
+        {
+            if(x == 998.9)
+            {
+                Console.Write("Прямые не пересекаются");
+            }
+        }
+    }
+}
+
+Method1Task43();
+Console.WriteLine();
+Console.WriteLine();
+
+// Task 47: Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+
+ void Method1Task47()
+{
+    Console.WriteLine("Задача № 47. Задайте двумерный массив размером m х n, заполненный случайными вещественными числами");
     Console.WriteLine("Введите m:");
     int task47VariableM = Convert.ToInt32(Console.ReadLine());
 
@@ -10,14 +264,14 @@ void Method1Task47()
     int task47VariableN = Convert.ToInt32(Console.ReadLine());
 
     //задаем массив
-    int[,] task47Array = new int[task47VariableM, task47VariableN];
+    double[,] task47Array = new double[task47VariableM, task47VariableN];
     
     //заполняем массив случайными числами
     for(int i = 0; i < task47VariableM; i++)
     {
         for(int j = 0; j < task47VariableN; j++)
         {
-            task47Array[i,j] = new Random().Next(0,9);
+            task47Array[i,j] = new Random().Next(-9, 9) + new Random().NextDouble();;
         }
     }
    
@@ -33,17 +287,19 @@ void Method1Task47()
 }
 
 Method1Task47();
-*/
+Console.WriteLine();
+Console.WriteLine();
+
 // Task 50: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
 //          и возвращает значение этого элемента или же указание, что такого элемента нет.
-/*
+
 void Method1Task50()
 {
-
-    Console.WriteLine("Введите m:");
+    Console.WriteLine("Задача № 50");
+    Console.WriteLine("Введите число строк m:");
     int task50VariableM = Convert.ToInt32(Console.ReadLine());
 
-    Console.WriteLine("Введите n:");
+    Console.WriteLine("Введите столбцов n:");
     int task50VariableN = Convert.ToInt32(Console.ReadLine());
 
     //задаем массив
@@ -81,12 +337,14 @@ void Method1Task50()
 }
 
 Method1Task50();
-*/
+Console.WriteLine();
+Console.WriteLine();
+
 // Task 52: Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
 void Method1Task52()
 {
-
+    Console.WriteLine("Задача № 52");
     Console.WriteLine("Введите m:");
     int task52VariableM = Convert.ToInt32(Console.ReadLine());
 
@@ -133,243 +391,8 @@ void Method1Task52()
 }
 
 Method1Task52();
-
-// Task 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
-//0, 7, 8, -2, -2 -> 2
-//-1, -7, 567, 89, 223-> 3
-/*
-void Method1Task41()
-{
-    Console.WriteLine("Введите число М:");
-    int task41VariableМ = Convert.ToInt32(Console.ReadLine());
-
-    Console.WriteLine("Введите с клавиатуры " + task41VariableМ + " чисел");
-    //задаем массив
-    int[] task34Array = new int[task41VariableМ];
-    
-    //счётчик
-    int count = 0;
-
-    //заполняем массив и считаем количество элементов больше 0
-    for(int i = 0; i < task41VariableМ; i++)
-    {
-        task34Array[i] = Convert.ToInt32(Console.ReadLine());
-        if(task34Array[i] > 0)
-        {
-            count++;
-        }
-    }
-
-    //выводим ответ
-    for(int i = 0; i < task41VariableМ; i++)
-    {
-        Console.Write(task34Array[i]);
-        if(i == task41VariableМ - 1)
-        {
-             Console.Write(" -> " + count);
-        }
-        else
-        {
-             Console.Write(", ");
-        }
-    }
-
-}
-
-Method1Task41();
-
-// Task 43. Напишите программу, которая найдёт точку пересечения двух прямых, 
-//заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
-//значения b1, k1, b2 и k2 задаются пользователем.
-//b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
-
-void Method1Task43()
-{
-    Console.WriteLine("Введите число k1:");
-    int task41Variablek1 = Convert.ToInt32(Console.ReadLine());
-
-    Console.WriteLine("Введите число k2:");
-    int task41Variablek2 = Convert.ToInt32(Console.ReadLine());
-
-    Console.WriteLine("Введите число b1:");
-    int task41Variableb1 = Convert.ToInt32(Console.ReadLine());
-
-    Console.WriteLine("Введите число b2:");
-    int task41Variableb2 = Convert.ToInt32(Console.ReadLine());
-
-    for(double x = -999; x < 999; x = x + 0.1)
-    {
-        x = Math.Round(x, 2);
-
-        if((task41Variablek1 * x + task41Variableb1) == (task41Variablek2 * x + task41Variableb2))
-        {
-            Console.Write("b1= " + task41Variableb1 + ", k1= " + task41Variablek1);
-            Console.Write(", b2= " + task41Variableb2 + ", k2= " + task41Variablek2);
-            Console.Write(" -> (" + x + "; " + (task41Variablek1 * x + task41Variableb1) + ")");
-            break;
-        }
-        else
-        {
-            if(x == 998.9)
-            {
-                Console.Write("Прямые не пересекаются");
-            }
-        }
-    }
-}
-
-Method1Task43();
-*/
-
-// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
-//Напишите программу, которая покажет количество чётных чисел в массиве.
-/*
-Console.WriteLine("Введите колличество элементов в массиве:");
-int task34Variable1 = Convert.ToInt32(Console.ReadLine());
-
-void Method1Task34()
-{
-
-    //задаем массив
-    int[] task34Array = new int[task34Variable1];
-    
-    //заполняем массив случайными числами от 100 до 999
-    for(int i = 0; i < task34Variable1; i++)
-    {
-        task34Array[i] = new Random().Next(100,999);
-    }
-
-    //счётчик
-    int count = 0;
-
-    //считаем колличество чётных чисел в массиве
-    for(int i = 0; i < task34Variable1; i++)
-    {
-        if(task34Array[i] % 2 == 0)
-        {
-            count++;
-        }
-    }
-
-    //выводим массив
-    for(int i = 0; i < task34Variable1; i++)
-    {
-        Console.Write(task34Array[i] + " ");
-    }
-
-    //вывоводим колличество чётных элементов массива
-    Console.WriteLine();
-    Console.Write(count);
-}
-
-Method1Task34();
-
-// Task 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
-
-Console.WriteLine("Введите колличество элементов в массиве:");
-int task36Variable1 = Convert.ToInt32(Console.ReadLine());
-
-void Method1Task36()
-{
-
-    //задаем массив
-    int[] task36Array = new int[task36Variable1];
-    
-    //заполняем массив случайными числами от -9 до 9
-    for(int i = 0; i < task36Variable1; i++)
-    {
-        task36Array[i] = new Random().Next(-9,9);
-    }
-
-    //считаем сумму
-    int sum = 0;
-
-    //суммируем элементы на нечётных позициях
-    for(int i = 0; i < task36Variable1; i++)
-    {
-        if(i % 2 != 0)
-        {
-            sum = sum + task36Array[i];
-        }
-    }
-
-    //выводим массив
-    for(int i = 0; i < task36Variable1; i++)
-    {
-        Console.Write(task36Array[i] + " ");
-    }
-
-    //вывоводим сумму элементов на нечётных позициях
-    Console.WriteLine();
-    Console.Write(sum);
-}
-
-Method1Task36();
-
-
-// Task 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
-
-Console.WriteLine("Введите колличество элементов в массиве:");
-int task38Variable1 = Convert.ToInt32(Console.ReadLine());
-
-void Method1Task38()
-{
-    //задаем массив
-    double[] task38Array = new double[task38Variable1];
-    
-    //заполняем массив случайными числами
-    for(int i = 0; i < task38Variable1; i++)
-    {
-        task38Array[i] =new Random().Next(-999, 999) + new Random().NextDouble();
-    }
-
-    double max = 0;
-    double min = 0;
-
-    //определяем из двух первых элементов минимальный и максимальный
-    //и записываем в в min и max соответственно
-    if(task38Array[0] > task38Array[1])
-    {
-        max = task38Array[0];
-        min = task38Array[1];
-    }
-    else
-    {
-        max = task38Array[1];
-        min = task38Array[0];
-    }
-
-    //сравниваем элементы массива, начиная с третьего
-    //с min и max
-    //и записываем в в min и max соответственно
-    for(int i = 2; i < task38Variable1; i++)
-    {
-        if(task38Array[i] > max)
-        {
-            max = task38Array[i];
-        }
-        else
-        {
-            if(task38Array[i] < min)
-            {
-                min = task38Array[i];
-            }
-        }
-    }
-
-    //выводим массив
-    for(int i = 0; i < task38Variable1; i++)
-    {
-        Console.Write(task38Array[i] + " ");
-    }
-
-    //разница между максимальным и минимальным элементами массива
-    Console.WriteLine();
-    Console.WriteLine(max - min);
-}
-
-Method1Task38();
-*/
+Console.WriteLine();
+Console.WriteLine();
 
 /*Fourth practical work. (Task 25, 27, 29)
 
