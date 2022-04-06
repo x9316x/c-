@@ -1,6 +1,6 @@
 ﻿// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 //Напишите программу, которая покажет количество чётных чисел в массиве.
-
+/*
 Console.WriteLine("Введите колличество элементов в массиве:");
 int task34Variable1 = Convert.ToInt32(Console.ReadLine());
 
@@ -40,8 +40,49 @@ void Method1Task34()
 }
 
 Method1Task34();
-
+*/
 // Task 36: Задайте одномерный массив, заполненный случайными числами. Найдите сумму элементов, стоящих на нечётных позициях.
+
+Console.WriteLine("Введите колличество элементов в массиве:");
+int task36Variable1 = Convert.ToInt32(Console.ReadLine());
+
+void Method1Task36()
+{
+
+    //задаем массив
+    int[] task36Array = new int[task36Variable1];
+    
+    //заполняем массив случайными числами от -9 до 9
+    for(int i = 0; i < task36Variable1; i++)
+    {
+        task36Array[i] = new Random().Next(-9,9);
+    }
+
+    //считаем сумму
+    int sum = 0;
+
+    //суммируем элементы на нечётных позициях
+    for(int i = 0; i < task36Variable1; i++)
+    {
+        if(i % 2 != 0)
+        {
+            sum = sum + task36Array[i];
+        }
+    }
+
+    //выводим массив
+    for(int i = 0; i < task36Variable1; i++)
+    {
+        Console.Write(task36Array[i] + " ");
+    }
+
+    //вывоводим сумму элементов на нечётных позициях
+    Console.WriteLine();
+    Console.Write(sum);
+}
+
+Method1Task36();
+
 // Task 38: Задайте массив вещественных чисел. Найдите разницу между максимальным и минимальным элементов массива.
 
 /*Fourth practical work. (Task 25, 27, 29)
