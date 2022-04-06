@@ -1,7 +1,7 @@
 ﻿// Task 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 //0, 7, 8, -2, -2 -> 2
 //-1, -7, 567, 89, 223-> 3
-
+/*
 void Method1Task41()
 {
     Console.WriteLine("Введите число М:");
@@ -41,10 +41,49 @@ void Method1Task41()
 }
 
 Method1Task41();
+*/
 
-// Task 43. Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
+// Task 43. Напишите программу, которая найдёт точку пересечения двух прямых, 
+//заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
+//значения b1, k1, b2 и k2 задаются пользователем.
 //b1 = 2, k1 = 5, b2 = 4, k2 = 9 -> (-0,5; -0,5)
 
+void Method1Task43()
+{
+    Console.WriteLine("Введите число k1:");
+    int task41Variablek1 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите число k2:");
+    int task41Variablek2 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите число b1:");
+    int task41Variableb1 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите число b2:");
+    int task41Variableb2 = Convert.ToInt32(Console.ReadLine());
+
+    for(double x = -999; x < 999; x = x + 0.1)
+    {
+        x = Math.Round(x, 2);
+
+        if((task41Variablek1 * x + task41Variableb1) == (task41Variablek2 * x + task41Variableb2))
+        {
+            Console.Write("b1= " + task41Variableb1 + ", k1= " + task41Variablek1);
+            Console.Write(", b2= " + task41Variableb2 + ", k2= " + task41Variablek2);
+            Console.Write(" -> (" + x + "; " + (task41Variablek1 * x + task41Variableb1) + ")");
+            break;
+        }
+        else
+        {
+            if(x == 998.9)
+            {
+                Console.Write("Прямые не пересекаются");
+            }
+        }
+    }
+}
+
+Method1Task43();
 
 // Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 //Напишите программу, которая покажет количество чётных чисел в массиве.
