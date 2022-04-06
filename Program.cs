@@ -1,4 +1,90 @@
-﻿// Task 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
+﻿// Task 47: Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
+/*
+void Method1Task47()
+{
+
+    Console.WriteLine("Введите m:");
+    int task47VariableM = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите n:");
+    int task47VariableN = Convert.ToInt32(Console.ReadLine());
+
+    //задаем массив
+    int[,] task47Array = new int[task47VariableM, task47VariableN];
+    
+    //заполняем массив случайными числами
+    for(int i = 0; i < task47VariableM; i++)
+    {
+        for(int j = 0; j < task47VariableN; j++)
+        {
+            task47Array[i,j] = new Random().Next(0,9);
+        }
+    }
+   
+    //выводим массив
+    for(int i = 0; i < task47VariableM; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task47VariableN; j++)
+        {
+            Console.Write(task47Array[i,j] + " ");
+        }
+    }
+}
+
+Method1Task47();
+*/
+// Task 50: Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, 
+//          и возвращает значение этого элемента или же указание, что такого элемента нет.
+/*
+void Method1Task50()
+{
+
+    Console.WriteLine("Введите m:");
+    int task50VariableM = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите n:");
+    int task50VariableN = Convert.ToInt32(Console.ReadLine());
+
+    //задаем массив
+    int[,] task50Array = new int[task50VariableM, task50VariableN];
+    
+    //заполняем массив случайными числами
+    for(int i = 0; i < task50VariableM; i++)
+    {
+        for(int j = 0; j < task50VariableN; j++)
+        {
+            task50Array[i,j] = new Random().Next(0,9);
+        }
+    }
+   
+    //выводим массив
+    for(int i = 0; i < task50VariableM; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task50VariableN; j++)
+        {
+            Console.Write(task50Array[i,j] + " ");
+        }
+    }
+
+    Console.WriteLine();
+    Console.WriteLine("Введите номер строки m:");
+    int task50VariableM2 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите номер столбца n:");
+    int task50VariableN2 = Convert.ToInt32(Console.ReadLine());
+
+    //выводим элемент m-ой строки и n-го столбца
+    Console.WriteLine("Выбранный элемент:");
+    Console.Write(task50Array[task50VariableM2 - 1, task50VariableN2 - 1]);   
+}
+
+Method1Task50();
+*/
+// Task 52: Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+// Task 41. Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 //0, 7, 8, -2, -2 -> 2
 //-1, -7, 567, 89, 223-> 3
 /*
@@ -41,7 +127,6 @@ void Method1Task41()
 }
 
 Method1Task41();
-*/
 
 // Task 43. Напишите программу, которая найдёт точку пересечения двух прямых, 
 //заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; 
@@ -84,6 +169,7 @@ void Method1Task43()
 }
 
 Method1Task43();
+*/
 
 // Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 //Напишите программу, которая покажет количество чётных чисел в массиве.
