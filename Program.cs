@@ -393,7 +393,7 @@ void Method1Task52()
 Method1Task52();
 Console.WriteLine();
 Console.WriteLine();
-*/
+
 // Task 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
 void Method1Task54()
@@ -463,8 +463,83 @@ void Method1Task54()
 Method1Task54();
 Console.WriteLine();
 Console.WriteLine();
-
+*/
 // Task 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+
+void Method1Task56()
+{
+    Console.WriteLine("Задача № 56. Задайте прямоугольный двумерный массив (m < n");
+    Console.WriteLine("Введите m:");
+    int task56VariableM = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите n:");
+    int task56VariableN = Convert.ToInt32(Console.ReadLine());
+    while(task56VariableN <= task56VariableM)
+    {
+        Console.WriteLine("Ошибка. n должно быть больше чем m! Введите n:");
+        int task56VariableN2 = Convert.ToInt32(Console.ReadLine());
+        task56VariableN = task56VariableN2;
+    }
+    
+    //задаем массив
+    int[,] task56Array = new int[task56VariableM, task56VariableN];
+    //массив для сумм строк
+    int[] task56Sum = new int[task56VariableM];
+    int sum = 0;
+
+    //заполняем массив случайными числами
+    for(int i = 0; i < task56VariableM; i++)
+    {
+        for(int j = 0; j < task56VariableN; j++)
+        {
+            task56Array[i,j] = new Random().Next(0,9);
+        }
+    }
+   
+    //выводим изначальный массив
+    for(int i = 0; i < task56VariableM; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task56VariableN; j++)
+        {
+            Console.Write(task56Array[i,j] + " ");
+        }
+    }
+
+    Console.WriteLine();
+
+    //считаем сумму строк и результаты помещаем в массив
+    for(int i = 0; i < task56VariableM; i++)
+    {
+        sum = 0;
+        for(int j = 0; j < task56VariableN; j++)
+        {
+            sum = sum + task56Array[i, j];
+            task56Sum[i] = sum;
+        }   
+    }
+
+    //ищем строку с минимальной суммой
+    int min = task56Sum[0];
+    int minInd = 0;
+    for(int i = 1; i < task56VariableM; i++)
+    {
+        if(task56Sum[i] < min)
+        {
+            min = task56Sum[i];
+            minInd = i + 1;
+        }
+    }
+    //выводим номер строки с минимальной суммой
+    Console.WriteLine("Строка с минимальной суммой: ");
+    Console.WriteLine(minInd);
+}
+
+
+Method1Task56();
+Console.WriteLine();
+Console.WriteLine();
+
 // Task 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 // Task 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая построчно выведет элементы и их индексы.
 // Task 62: Заполните спирально массив 4 на 4 числами от 1 до 16.
