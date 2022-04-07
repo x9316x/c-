@@ -1,4 +1,4 @@
-﻿// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+﻿/*// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 //Напишите программу, которая покажет количество чётных чисел в массиве.
 Console.WriteLine("Задача № 34. Зададим массив, заполненный случайными положительными трёхзначными числами:");
 Console.WriteLine("И посчитаем количество чётных чисел в массиве:");
@@ -393,6 +393,81 @@ void Method1Task52()
 Method1Task52();
 Console.WriteLine();
 Console.WriteLine();
+*/
+// Task 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+
+void Method1Task54()
+{
+    Console.WriteLine("Задача № 54. Построчная сортировка по убыванию");
+    Console.WriteLine("Введите m:");
+    int task54VariableM = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите n:");
+    int task54VariableN = Convert.ToInt32(Console.ReadLine());
+
+    //задаем массив
+    int[,] task54Array = new int[task54VariableM, task54VariableN];
+    //массив для сортировки
+    int[,] task54ChangeArray = new int[task54VariableM, task54VariableN];
+
+    //заполняем массив случайными числами
+    for(int i = 0; i < task54VariableM; i++)
+    {
+        for(int j = 0; j < task54VariableN; j++)
+        {
+            task54Array[i,j] = new Random().Next(0,9);
+        }
+    }
+   
+    //выводим изначальный массив
+    for(int i = 0; i < task54VariableM; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task54VariableN; j++)
+        {
+            Console.Write(task54Array[i,j] + " ");
+        }
+    }
+
+    //сортируем массив построчно
+    for(int i = 0; i < task54VariableM; i++)
+    {
+        for(int k = 0; k < task54VariableN; k++)
+        {
+            for(int j = 1; j < task54VariableN; j++)
+            {
+                if(task54Array[i,j-1] < task54Array[i,j])
+                {
+                    task54ChangeArray[i,j] = task54Array[i,j-1];
+                    task54Array[i,j-1] = task54Array[i,j];
+                    task54Array[i,j] = task54ChangeArray[i,j];
+                }
+            }
+        }   
+    }
+
+    Console.WriteLine();
+    Console.WriteLine();
+    //выводим отсортированный массив
+    for(int i = 0; i < task54VariableM; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task54VariableN; j++)
+        {
+            Console.Write(task54Array[i,j] + " ");
+        }
+    }
+
+}
+
+Method1Task54();
+Console.WriteLine();
+Console.WriteLine();
+
+// Task 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
+// Task 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+// Task 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая построчно выведет элементы и их индексы.
+// Task 62: Заполните спирально массив 4 на 4 числами от 1 до 16.
 
 /*Fourth practical work. (Task 25, 27, 29)
 
