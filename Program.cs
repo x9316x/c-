@@ -463,7 +463,7 @@ void Method1Task54()
 Method1Task54();
 Console.WriteLine();
 Console.WriteLine();
-*/
+
 // Task 56: Задайте прямоугольный двумерный массив. Напишите программу, которая будет находить строку с наименьшей суммой элементов.
 
 void Method1Task56()
@@ -539,8 +539,91 @@ void Method1Task56()
 Method1Task56();
 Console.WriteLine();
 Console.WriteLine();
+*/
 
 // Task 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+
+void Method1Task58()
+{
+    Console.WriteLine("Задача № 58. Зададим две матрицы");
+    Console.WriteLine("Зададим размер первой матрицы");
+    Console.WriteLine("Введите m1:");
+    int task58VariableM1 = Convert.ToInt32(Console.ReadLine());
+    Console.WriteLine("Введите n1:");
+    int task58VariableN1 = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Зададим размер первой матрицы");
+    Console.WriteLine("Умножать матрицы можно тогда и только тогда, когда количество столбцов первой матрицы равно количеству строк второй матрицы.");
+    Console.WriteLine("n1 = m2!");
+
+    Console.WriteLine("Зададим размер второй матрицы");
+    Console.WriteLine("Введите m2:");
+    int task58VariableM2 = Convert.ToInt32(Console.ReadLine());
+    
+    while(task58VariableM2 != task58VariableN1)
+    {
+        Console.WriteLine("Ошибка. Число строк второй матрицы m2");
+        Console.WriteLine("должно быть равно числу столбцов первой матрицы n1:");
+        int task58VariableM2Temp = Convert.ToInt32(Console.ReadLine());
+        task58VariableM2 = task58VariableM2Temp;
+    }
+
+    Console.WriteLine("Введите n2:");
+    int task58VariableN2 = Convert.ToInt32(Console.ReadLine());
+
+
+    //задаем массивы
+    int[,] task58Array1 = new int[task58VariableM1, task58VariableN1];
+    int[,] task58Array2 = new int[task58VariableM2, task58VariableN2];
+
+    //заполняем массив случайными числами 1 массив
+    for(int i = 0; i < task58VariableM1; i++)
+    {
+        for(int j = 0; j < task58VariableN1; j++)
+        {
+            task58Array1[i,j] = new Random().Next(0,9);
+        }
+    }
+
+     //заполняем массив случайными числами 2 массив
+    for(int i = 0; i < task58VariableM2; i++)
+    {
+        for(int j = 0; j < task58VariableN2; j++)
+        {
+            task58Array2[i,j] = new Random().Next(0,9);
+        }
+    }
+   
+    //выводим изначальный 1 массив
+    for(int i = 0; i < task58VariableM1; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task58VariableN1; j++)
+        {
+            Console.Write(task58Array1[i,j] + " ");
+        }
+    }
+
+    Console.WriteLine();
+
+    //выводим изначальный 2 массив
+    for(int i = 0; i < task58VariableM2; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task58VariableN2; j++)
+        {
+            Console.Write(task58Array2[i,j] + " ");
+        }
+    }
+
+    
+
+}
+
+Method1Task58();
+Console.WriteLine();
+Console.WriteLine();
+
 // Task 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая построчно выведет элементы и их индексы.
 // Task 62: Заполните спирально массив 4 на 4 числами от 1 до 16.
 
