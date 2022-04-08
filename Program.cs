@@ -546,9 +546,12 @@ Console.WriteLine();
 void Method1Task58()
 {
     Console.WriteLine("Задача № 58. Зададим две матрицы");
+    
     Console.WriteLine("Зададим размер первой матрицы");
+    
     Console.WriteLine("Введите m1:");
     int task58VariableM1 = Convert.ToInt32(Console.ReadLine());
+    
     Console.WriteLine("Введите n1:");
     int task58VariableN1 = Convert.ToInt32(Console.ReadLine());
 
@@ -557,6 +560,7 @@ void Method1Task58()
     Console.WriteLine("n1 = m2!");
 
     Console.WriteLine("Зададим размер второй матрицы");
+    
     Console.WriteLine("Введите m2:");
     int task58VariableM2 = Convert.ToInt32(Console.ReadLine());
     
@@ -571,12 +575,12 @@ void Method1Task58()
     Console.WriteLine("Введите n2:");
     int task58VariableN2 = Convert.ToInt32(Console.ReadLine());
 
-
-    //задаем массивы
+    //создаем массивы
     int[,] task58Array1 = new int[task58VariableM1, task58VariableN1];
     int[,] task58Array2 = new int[task58VariableM2, task58VariableN2];
+    int[,] task58Array3 = new int[task58VariableN1, task58VariableN1];
 
-    //заполняем массив случайными числами 1 массив
+    //заполняем случайными числами 1-й массив
     for(int i = 0; i < task58VariableM1; i++)
     {
         for(int j = 0; j < task58VariableN1; j++)
@@ -585,7 +589,7 @@ void Method1Task58()
         }
     }
 
-     //заполняем массив случайными числами 2 массив
+     //заполняем случайными числами 2-ой массив
     for(int i = 0; i < task58VariableM2; i++)
     {
         for(int j = 0; j < task58VariableN2; j++)
@@ -594,7 +598,7 @@ void Method1Task58()
         }
     }
    
-    //выводим изначальный 1 массив
+    //выводим изначальный 1-й массив
     for(int i = 0; i < task58VariableM1; i++)
     {
         Console.WriteLine();
@@ -606,7 +610,7 @@ void Method1Task58()
 
     Console.WriteLine();
 
-    //выводим изначальный 2 массив
+    //выводим изначальный 2-ой массив
     for(int i = 0; i < task58VariableM2; i++)
     {
         Console.WriteLine();
@@ -616,7 +620,29 @@ void Method1Task58()
         }
     }
 
-    
+    //перемножаем матрицы, формируем 3-й массив
+    for(int i = 0; i < task58VariableM2; i++)
+    {
+        for(int j = 0; j < task58VariableN2; j++)
+        {
+            for(int k = 0; k < task58VariableN2; k++)
+            {
+                task58Array3[i, j] += task58Array1[i, k] * task58Array2[k, j];
+            }
+        }
+    }
+
+    Console.WriteLine();
+    Console.WriteLine();
+    //выводим 3-й массив
+    for(int i = 0; i < task58VariableM2; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task58VariableN2; j++)
+        {
+            Console.Write(task58Array3[i,j] + " ");
+        }
+    }
 
 }
 
