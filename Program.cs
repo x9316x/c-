@@ -621,11 +621,11 @@ void Method1Task58()
     }
 
     //перемножаем матрицы, формируем 3-й массив
-    for(int i = 0; i < task58VariableM2; i++)
+    for(int i = 0; i < task58VariableN1; i++)
     {
-        for(int j = 0; j < task58VariableN2; j++)
+        for(int j = 0; j < task58VariableN1; j++)
         {
-            for(int k = 0; k < task58VariableN2; k++)
+            for(int k = 0; k < task58VariableN1; k++)
             {
                 task58Array3[i, j] += task58Array1[i, k] * task58Array2[k, j];
             }
@@ -633,12 +633,11 @@ void Method1Task58()
     }
 
     Console.WriteLine();
-    Console.WriteLine();
     //выводим 3-й массив
-    for(int i = 0; i < task58VariableM2; i++)
+    for(int i = 0; i < task58VariableN1; i++)
     {
         Console.WriteLine();
-        for(int j = 0; j < task58VariableN2; j++)
+        for(int j = 0; j < task58VariableN1; j++)
         {
             Console.Write(task58Array3[i,j] + " ");
         }
@@ -651,6 +650,7 @@ Console.WriteLine();
 Console.WriteLine();
 
 // Task 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая построчно выведет элементы и их индексы.
+
 // Task 62: Заполните спирально массив 4 на 4 числами от 1 до 16.
 
 /*Fourth practical work. (Task 25, 27, 29)
