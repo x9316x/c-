@@ -539,7 +539,7 @@ void Method1Task56()
 Method1Task56();
 Console.WriteLine();
 Console.WriteLine();
-*/
+
 
 // Task 58: Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
 
@@ -621,11 +621,11 @@ void Method1Task58()
     }
 
     //перемножаем матрицы, формируем 3-й массив
-    for(int i = 0; i < task58VariableN1; i++)
+    for(int i = 0; i < task58VariableM1; i++)
     {
-        for(int j = 0; j < task58VariableN1; j++)
+        for(int j = 0; j < task58VariableN2; j++)
         {
-            for(int k = 0; k < task58VariableN1; k++)
+            for(int k = 0; k < task58VariableM1; k++)
             {
                 task58Array3[i, j] += task58Array1[i, k] * task58Array2[k, j];
             }
@@ -634,10 +634,10 @@ void Method1Task58()
 
     Console.WriteLine();
     //выводим 3-й массив
-    for(int i = 0; i < task58VariableN1; i++)
+    for(int i = 0; i < task58VariableM1; i++)
     {
         Console.WriteLine();
-        for(int j = 0; j < task58VariableN1; j++)
+        for(int j = 0; j < task58VariableN2; j++)
         {
             Console.Write(task58Array3[i,j] + " ");
         }
@@ -648,8 +648,85 @@ void Method1Task58()
 Method1Task58();
 Console.WriteLine();
 Console.WriteLine();
+*/
+// Task 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
+// Напишите программу, которая построчно выведет элементы и их индексы.
 
-// Task 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. Напишите программу, которая построчно выведет элементы и их индексы.
+void Method1Task60()
+{
+    Console.WriteLine("Сформируем трёхмерный массив из неповторяющихся двузначных чисел");
+    Console.WriteLine("Общее число элементов массива не должно превышать количество двузначных чисел - 90");
+    
+    Console.WriteLine("Введите колличество строк:");
+    int task60VariableX = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите колличество столцов:");
+    int task60VariableY = Convert.ToInt32(Console.ReadLine());
+
+    Console.WriteLine("Введите колличество страниц:");
+    int task60VariableZ = Convert.ToInt32(Console.ReadLine());
+    while(task60VariableZ > (90/(task60VariableX * task60VariableY)))
+    {
+        Console.WriteLine("Уменьшите количество страниц!");
+        int task60VariableZTemp = Convert.ToInt32(Console.ReadLine());
+        task60VariableZ = task60VariableZTemp;
+    }
+
+    // Задаём трёхмерный массив
+    int[,,] task60Array1 = new int[task60VariableX, task60VariableY, task60VariableZ];
+    
+    // Задаём массив двузначных чисел
+    int[] task60Array2 = new int[90];
+
+    // Заполняем массив двухзначных чисел двухзначными числами
+    for(int i = 0; i < 90; i++)
+    {
+        task60Array2[i] = i + 10;
+    }
+    
+    // Заполняем трёхмерных массив
+    for(int i = 0; i < task60VariableX; i++)
+    {
+        for(int j = 0; j < task60VariableY; j++)
+        {
+            for(int k = 0; k < task60VariableZ; k++)
+            {
+                // Получаем случайный индекс
+                int task60VariableRandomIndex = new Random().Next(0,90);
+                // Если в массиве двузначных чисел элемент с выбранным индексом равен нулю
+                // Получаем новый случайный индекс
+                while(task60Array2[task60VariableRandomIndex] == 0)
+                {
+                    task60VariableRandomIndex = new Random().Next(0,90);    
+                } 
+                // Присваиваем текущему элементу трёхмерного массива 
+                // значение элемента из массива двухзначных чисел
+                // под выбранным индексом
+                task60Array1[i,j,k] = task60Array2[task60VariableRandomIndex];
+                // Переписываем использованное двузначное число в массиве на нуль
+                task60Array2[task60VariableRandomIndex] = 0;                              
+            }
+        }
+    }
+
+    Console.WriteLine();
+   
+    for(int i = 0; i < task60VariableX; i++)
+    {
+        for(int j = 0; j < task60VariableY; j++)
+        {
+            for(int k = 0; k < task60VariableZ; k++)
+            {
+                Console.WriteLine("Элемент- " + task60Array1[i,j,k] + " строка- " + i + " столбец- " + j + " страница- " + k + " ");
+            }
+        }
+    }
+
+}
+
+Method1Task60();
+Console.WriteLine();
+Console.WriteLine();
 
 // Task 62: Заполните спирально массив 4 на 4 числами от 1 до 16.
 
