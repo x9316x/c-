@@ -648,7 +648,7 @@ void Method1Task58()
 Method1Task58();
 Console.WriteLine();
 Console.WriteLine();
-*/
+
 // Task 60: Сформируйте трёхмерный массив из неповторяющихся двузначных чисел. 
 // Напишите программу, которая построчно выведет элементы и их индексы.
 
@@ -727,9 +727,74 @@ void Method1Task60()
 Method1Task60();
 Console.WriteLine();
 Console.WriteLine();
-
+*/
 // Task 62: Заполните спирально массив 4 на 4 числами от 1 до 16.
 
+void Method1Task62()
+{
+    // Задаём размер массива
+    int task62ArraySize = 4;
+    //создаем массив
+    int[,] task62Array1 = new int[task62ArraySize, task62ArraySize];
+
+    //заполняем массив
+    for(int i = 0; i < task62ArraySize; i++)
+    {
+        for(int j = 0; j < task62ArraySize; j++)
+        {
+            // Справедливо для любых массивов n х n
+            if(i == 0)
+            {
+                task62Array1[i,j] = j + 1;
+            }
+            if(j == (task62ArraySize - 1) & i > 0)
+            {
+                task62Array1[i,j] = i + j + 1;
+            }
+            if(i == (task62ArraySize - 1) & j < (task62ArraySize - 1))
+            {
+                task62Array1[i,j] = task62Array1[0, (task62ArraySize - 1)] * 3 - 2 - j;
+            }
+            if(j == 0 & i < (task62ArraySize - 1) & i > 0)
+            {
+                task62Array1[i,j] = 4 * (task62ArraySize - 1) + 1 - i;
+            }
+            if(i == 1 & j > 0 & j < (task62ArraySize - 1))
+            {
+                task62Array1[i,j] = 4 * (task62ArraySize - 1) + j;
+            }
+            // Справедливо для массива размером 4 х 4
+            if(i == 2 & j < 3 & j > 0)
+            {
+                task62Array1[i,j] = 17 - j;
+            }
+       }
+    }
+   
+    //выводим массив
+    for(int i = 0; i < task62ArraySize; i++)
+    {
+        Console.WriteLine();
+        for(int j = 0; j < task62ArraySize; j++)
+        {
+            if(task62Array1[i,j] > 9)
+            {
+                Console.Write(task62Array1[i,j] + " ");
+            }
+            else
+            {
+                Console.Write(task62Array1[i,j] + "  ");
+            }
+            
+        }
+    }
+
+
+}
+
+Method1Task62();
+Console.WriteLine();
+Console.WriteLine();
 /*Fourth practical work. (Task 25, 27, 29)
 
 // Task 25: Напишите цикл, который принимает на вход два натуральных числа (A и B) и возводит число A в степень B.
