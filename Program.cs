@@ -1,4 +1,51 @@
-﻿/*// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
+﻿// Практическая работа № 9
+
+// Задача 1. На вход подуются два числа n и m, такие, что n<m. Заполните массив случайными числами из промежутка [n, m].
+
+Console.WriteLine("Задача 1. На вход подуются два числа n и m, такие, что n<m.");
+Console.WriteLine("Заполните массив случайными числами из промежутка [n, m]");
+
+Console.WriteLine("Введите n:");
+int lesson9Task1VariableN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите m:");
+int lesson9Task1VariableM = Convert.ToInt32(Console.ReadLine());
+while(lesson9Task1VariableN >= lesson9Task1VariableM)
+{
+    Console.WriteLine("Ошибка, m должно быть больше чем n! Введите m:");
+    int lesson9Task1VariableMTemp = Convert.ToInt32(Console.ReadLine());
+    lesson9Task1VariableM = lesson9Task1VariableMTemp;
+}
+
+void randomArray(int variableN, int variableM)
+{
+    // число элементов в массиве
+    int arrayCount = 10;
+    //задаем массив
+    int[] randomArray = new int[arrayCount];
+    
+    //заполняем массив случайными числами от 100 до 999
+    for(int i = 0; i < arrayCount; i++)
+    {
+        randomArray[i] = new Random().Next(variableN, variableM + 1);
+    }
+
+    Console.WriteLine();
+    //выводим массив
+    for(int i = 0; i < arrayCount; i++)
+    {
+        Console.Write(randomArray[i] + " ");
+    }
+
+}
+
+randomArray(lesson9Task1VariableN, lesson9Task1VariableM);
+Console.WriteLine();
+Console.WriteLine();
+
+// Задача 2. Двумерный массив заполнен случайными натуральными числами от 1 до 10. Найдите количество элементов, значение которых больше 5, и их сумму.
+// Задача 3. Напишите рекурсивный метод, который принимает номер года и определяет, является ли он високосным или нет.
+
+/*// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 //Напишите программу, которая покажет количество чётных чисел в массиве.
 Console.WriteLine("Задача № 34. Зададим массив, заполненный случайными положительными трёхзначными числами:");
 Console.WriteLine("И посчитаем количество чётных чисел в массиве:");
@@ -727,7 +774,7 @@ void Method1Task60()
 Method1Task60();
 Console.WriteLine();
 Console.WriteLine();
-*/
+
 // Task 62: Заполните спирально массив 4 на 4 числами от 1 до 16.
 
 void Method1Task62()
@@ -883,7 +930,7 @@ void Method1Task29()
 }
 
 Method1Task29();
-*/
+
 
 /*Second and third practical work. (Task 10, 13, 15, 19, 21, 23)
 
