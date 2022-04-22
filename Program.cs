@@ -45,66 +45,85 @@
 // Задача 2. Двумерный массив заполнен случайными натуральными числами от 1 до 10. 
 // Найдите количество элементов, значение которых больше 5, и их сумму.
 
-Console.WriteLine("Двумерный массив заполнен случайными натуральными числами от 1 до 10");
-Console.WriteLine("Найдите количество элементов, значение которых больше 5, и их сумму");
+// Console.WriteLine("Двумерный массив заполнен случайными натуральными числами от 1 до 10");
+// Console.WriteLine("Найдите количество элементов, значение которых больше 5, и их сумму");
 
-int[,] CreateTwoDimensionalrandomArray(int arraySizeM, int arraySizeN, int  rangeFrom, int rageTo)
-{
-    // задаем массив
-    int[,] twoDimensionalArray = new int[arraySizeM, arraySizeN];
+// int[,] CreateTwoDimensionalrandomArray(int arraySizeM, int arraySizeN, int  rangeFrom, int rageTo)
+// {
+//     // задаем массив
+//     int[,] twoDimensionalArray = new int[arraySizeM, arraySizeN];
     
-    // заполняем массив случайными числами
-    for(int i = 0; i < arraySizeM; i++)
-    {
-        for(int j = 0; j < arraySizeN; j++)
-        {
-            twoDimensionalArray[i,j] = new Random().Next(rangeFrom, rageTo + 1);
-        }
-    }
+//     // заполняем массив случайными числами
+//     for(int i = 0; i < arraySizeM; i++)
+//     {
+//         for(int j = 0; j < arraySizeN; j++)
+//         {
+//             twoDimensionalArray[i,j] = new Random().Next(rangeFrom, rageTo + 1);
+//         }
+//     }
 
-    // возвращаем массив
-    return twoDimensionalArray;
-}
+//     // возвращаем массив
+//     return twoDimensionalArray;
+// }
 
-// считаем количество элементов больше num
-int countArrayGraiterNum(int num, int[,] twoDimensionalRandomArray)
-{
-    int sum = 0;
+// // считаем количество элементов больше num
+// int countArrayGraiterNum(int num, int[,] twoDimensionalRandomArray)
+// {
+//     int sum = 0;
     
-    for(int i = 0; i < twoDimensionalRandomArray.GetLength(0); i++)
-    {
-        for(int j = 0; j < twoDimensionalRandomArray.GetLength(1); j++)
-        {
-            if(twoDimensionalRandomArray[i,j] > 5)
-            {
-                sum++;
-            }
-        }
-    }
-    return sum;
-}
+//     for(int i = 0; i < twoDimensionalRandomArray.GetLength(0); i++)
+//     {
+//         for(int j = 0; j < twoDimensionalRandomArray.GetLength(1); j++)
+//         {
+//             if(twoDimensionalRandomArray[i,j] > 5)
+//             {
+//                 sum++;
+//             }
+//         }
+//     }
+//     return sum;
+// }
 
-// печатаем массив в консоль
-Console.Write("Массив, заполненый случайными натуральными числами:");
-int[,] printArray = CreateTwoDimensionalrandomArray (4, 4, 1, 10);
-for(int i = 0; i < 4; i++)
-{
-    Console.WriteLine();
-    for(int j = 0; j < 4; j++)
-    {
-        Console.Write(printArray[i,j] + " ");
-    }
-}
+// // печатаем массив в консоль
+// Console.Write("Массив, заполненый случайными натуральными числами:");
+// int[,] printArray = CreateTwoDimensionalrandomArray (4, 4, 1, 10);
+// for(int i = 0; i < 4; i++)
+// {
+//     Console.WriteLine();
+//     for(int j = 0; j < 4; j++)
+//     {
+//         Console.Write(printArray[i,j] + " ");
+//     }
+// }
 
 
-Console.WriteLine();
-Console.WriteLine("Количество искомых элементов:");
-Console.WriteLine(countArrayGraiterNum(5, printArray));
+// Console.WriteLine();
+// Console.WriteLine("Количество искомых элементов:");
+// Console.WriteLine(countArrayGraiterNum(5, printArray));
 
-Console.WriteLine();
-Console.WriteLine();
+// Console.WriteLine();
+// Console.WriteLine();
 
 // Задача 3. Напишите рекурсивный метод, который принимает номер года и определяет, является ли он високосным или нет.
+
+Console.WriteLine("Введите год для проверки:");
+int year = Convert.ToInt32(Console.ReadLine());
+
+string leapYear(int year)
+{
+    if(year % 100 == 0)
+    {
+        if(year % 400 == 0 ) return "Високосный"; 
+        else return "Не високосный";
+    } 
+    else 
+    {
+        if(year % 4 == 0 ) return "Високосный"; 
+        else return "Не високосный";
+    }    
+}
+
+Console.WriteLine(leapYear(year));
 
 /*// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 //Напишите программу, которая покажет количество чётных чисел в массиве.
