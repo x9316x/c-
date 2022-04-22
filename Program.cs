@@ -1,48 +1,109 @@
 ﻿// Практическая работа № 9
 
-// Задача 1. На вход подуются два числа n и m, такие, что n<m. Заполните массив случайными числами из промежутка [n, m].
+// // Задача 1. На вход подуются два числа n и m, такие, что n<m. Заполните массив случайными числами из промежутка [n, m].
 
-Console.WriteLine("Задача 1. На вход подуются два числа n и m, такие, что n<m.");
-Console.WriteLine("Заполните массив случайными числами из промежутка [n, m]");
+// Console.WriteLine("Задача 1. На вход подуются два числа n и m, такие, что n<m.");
+// Console.WriteLine("Заполните массив случайными числами из промежутка [n, m]");
 
-Console.WriteLine("Введите n:");
-int lesson9Task1VariableN = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите m:");
-int lesson9Task1VariableM = Convert.ToInt32(Console.ReadLine());
-while(lesson9Task1VariableN >= lesson9Task1VariableM)
-{
-    Console.WriteLine("Ошибка, m должно быть больше чем n! Введите m:");
-    int lesson9Task1VariableMTemp = Convert.ToInt32(Console.ReadLine());
-    lesson9Task1VariableM = lesson9Task1VariableMTemp;
-}
+// Console.WriteLine("Введите количество элементов в массиве:");
+// int lesson9Task1ArraySize = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите n:");
+// int lesson9Task1VariableN = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите m:");
+// int lesson9Task1VariableM = Convert.ToInt32(Console.ReadLine());
+// while(lesson9Task1VariableN >= lesson9Task1VariableM)
+// {
+//     Console.WriteLine("Ошибка, m должно быть больше чем n! Введите m:");
+//     int lesson9Task1VariableMTemp = Convert.ToInt32(Console.ReadLine());
+//     lesson9Task1VariableM = lesson9Task1VariableMTemp;
+// }
 
-void randomArray(int variableN, int variableM)
-{
-    // число элементов в массиве
-    int arrayCount = 10;
-    //задаем массив
-    int[] randomArray = new int[arrayCount];
+// int[] randomArrayCreate(int variableN, int variableM, int arraySize)
+// {
+//     //задаем массив
+//     int[] randomArray = new int[arraySize];
     
-    //заполняем массив случайными числами от 100 до 999
-    for(int i = 0; i < arrayCount; i++)
+//     //заполняем массив случайными числами от 100 до 999
+//     for(int i = 0; i < arraySize; i++)
+//     {
+//         randomArray[i] = new Random().Next(variableN, variableM + 1);
+//     }
+
+//     //выводим массив
+//     return randomArray;
+// }
+
+// int[] showArray = randomArrayCreate(lesson9Task1VariableN, lesson9Task1VariableM, 10);
+// for(int i = 0; i < lesson9Task1ArraySize; i++)
+// {
+//     Console.Write(showArray[i] + " ");
+// }
+
+// Console.WriteLine();
+// Console.WriteLine();
+
+// Задача 2. Двумерный массив заполнен случайными натуральными числами от 1 до 10. 
+// Найдите количество элементов, значение которых больше 5, и их сумму.
+
+Console.WriteLine("Двумерный массив заполнен случайными натуральными числами от 1 до 10");
+Console.WriteLine("Найдите количество элементов, значение которых больше 5, и их сумму");
+
+int[,] CreateTwoDimensionalrandomArray(int arraySizeM, int arraySizeN, int  rangeFrom, int rageTo)
+{
+    // задаем массив
+    int[,] twoDimensionalArray = new int[arraySizeM, arraySizeN];
+    
+    // заполняем массив случайными числами
+    for(int i = 0; i < arraySizeM; i++)
     {
-        randomArray[i] = new Random().Next(variableN, variableM + 1);
+        for(int j = 0; j < arraySizeN; j++)
+        {
+            twoDimensionalArray[i,j] = new Random().Next(rangeFrom, rageTo + 1);
+        }
     }
 
-    Console.WriteLine();
-    //выводим массив
-    for(int i = 0; i < arrayCount; i++)
-    {
-        Console.Write(randomArray[i] + " ");
-    }
-
+    // возвращаем массив
+    return twoDimensionalArray;
 }
 
-randomArray(lesson9Task1VariableN, lesson9Task1VariableM);
+// считаем количество элементов больше num
+int countArrayGraiterNum(int num, int[,] twoDimensionalRandomArray)
+{
+    int sum = 0;
+    
+    for(int i = 0; i < twoDimensionalRandomArray.GetLength(0); i++)
+    {
+        for(int j = 0; j < twoDimensionalRandomArray.GetLength(1); j++)
+        {
+            if(twoDimensionalRandomArray[i,j] > 5)
+            {
+                sum++;
+            }
+        }
+    }
+    return sum;
+}
+
+// печатаем массив в консоль
+Console.Write("Массив, заполненый случайными натуральными числами:");
+int[,] printArray = CreateTwoDimensionalrandomArray (4, 4, 1, 10);
+for(int i = 0; i < 4; i++)
+{
+    Console.WriteLine();
+    for(int j = 0; j < 4; j++)
+    {
+        Console.Write(printArray[i,j] + " ");
+    }
+}
+
+
+Console.WriteLine();
+Console.WriteLine("Количество искомых элементов:");
+Console.WriteLine(countArrayGraiterNum(5, printArray));
+
 Console.WriteLine();
 Console.WriteLine();
 
-// Задача 2. Двумерный массив заполнен случайными натуральными числами от 1 до 10. Найдите количество элементов, значение которых больше 5, и их сумму.
 // Задача 3. Напишите рекурсивный метод, который принимает номер года и определяет, является ли он високосным или нет.
 
 /*// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
