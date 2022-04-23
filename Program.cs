@@ -89,33 +89,54 @@
 // 345 >> 543
 // 81 >> 18
 
+Console.WriteLine("1. Дано число n. Получите число, записанное в обратном порядке.");
+Console.WriteLine("Введете число n:");
+int lesson10task1VariableN = Convert.ToInt32(Console.ReadLine());
+
+void ReverseNum(int num)
+{
+    Console.Write(num % 10);
+    num = num / 10;
+    if(num > 0)
+    {
+        ReverseNum(num);
+    }
+    
+}
+Console.Write(lesson10task1VariableN + " >> ");
+ReverseNum(lesson10task1VariableN);
+
 // 2. Дана монотонная последовательность, в которой каждое натуральное число n встречается ровно n раз: 
 // 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ... Дано число m. Выведите первые m членов этой последовательности.
 // m = 5 >> 1, 2, 2, 3, 3
 
-Console.WriteLine("Введите M:");
-int lesson10task2VariableM = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Дана монотонная последовательность, в которой каждое натуральное число n встречается ровно n раз:");
+// Console.WriteLine("1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ... Дано число m. Выведите первые m членов этой последовательности.");
+// Console.WriteLine("m = 5 >> 1, 2, 2, 3, 3");
 
-void MonotonicSequence(int M, int index, int count)
-{
-    for(int i = 0; i < index; i++)
-    {
-        if(count < lesson10task2VariableM)
-        {
-            Console.Write(index + " ");
-            count++;
-        }
+// Console.WriteLine("Введите M:");
+// int lesson10task2VariableM = Convert.ToInt32(Console.ReadLine());
+
+// void MonotonicSequence(int M, int index, int count)
+// {
+//     for(int i = 0; i < index; i++)
+//     {
+//         if(count < lesson10task2VariableM)
+//         {
+//             Console.Write(index + " ");
+//             count++;
+//         }
         
-    }
-    index++;
-    if(count < lesson10task2VariableM)
-    {
-        MonotonicSequence(lesson10task2VariableM, index, count);
-    }
-}
+//     }
+//     index++;
+//     if(count < lesson10task2VariableM)
+//     {
+//         MonotonicSequence(lesson10task2VariableM, index, count);
+//     }
+// }
 
-Console.Write(lesson10task2VariableM + " >> ");
-MonotonicSequence(lesson10task2VariableM, 1, 0);
+// Console.Write(lesson10task2VariableM + " >> ");
+// MonotonicSequence(lesson10task2VariableM, 1, 0);
 
 
 // 3. Дано натуральное число n > 1. Вывести все простые множители данного числа.
