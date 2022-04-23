@@ -51,32 +51,32 @@
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-Console.WriteLine("Задача 66. Задайте значения M и N. Напишите программу,");
-Console.WriteLine("которая найдёт сумму натуральных элементов в промежутке от M до N.");
+// Console.WriteLine("Задача 66. Задайте значения M и N. Напишите программу,");
+// Console.WriteLine("которая найдёт сумму натуральных элементов в промежутке от M до N.");
 
-Console.WriteLine("Введите M:");
-int task66VariableM = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите N:");
-int task66VariableN = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите M:");
+// int task66VariableM = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите N:");
+// int task66VariableN = Convert.ToInt32(Console.ReadLine());
 
-int NaturalNumSum(int variableM, int variableN)
-{ 
-    int sum = 0;
+// int NaturalNumSum(int variableM, int variableN)
+// { 
+//     int sum = 0;
     
-    for(int i = variableM; i < variableN + 1; i++)
-    {
-        sum = sum + i;
-    }
-    return sum;
-}
+//     for(int i = variableM; i < variableN + 1; i++)
+//     {
+//         sum = sum + i;
+//     }
+//     return sum;
+// }
 
-Console.Write("M = " + task66VariableM + " ; N = " + task66VariableN);
-Console.Write(". -> ");
+// Console.Write("M = " + task66VariableM + " ; N = " + task66VariableN);
+// Console.Write(". -> ");
 
-Console.WriteLine(NaturalNumSum(task66VariableM, task66VariableN));
+// Console.WriteLine(NaturalNumSum(task66VariableM, task66VariableN));
 
-Console.WriteLine();
-Console.WriteLine();
+// Console.WriteLine();
+// Console.WriteLine();
 
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
@@ -89,13 +89,59 @@ Console.WriteLine();
 // 345 >> 543
 // 81 >> 18
 
-// 2. Дана монотонная последовательность, в которой каждое натуральное число n встречается ровно n раз: 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ... Дано число m. Выведите первые m членов этой последовательности.
+// 2. Дана монотонная последовательность, в которой каждое натуральное число n встречается ровно n раз: 
+// 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ... Дано число m. Выведите первые m членов этой последовательности.
 // m = 5 >> 1, 2, 2, 3, 3
 
 // 3. Дано натуральное число n > 1. Вывести все простые множители данного числа.
 // 10 >> 5, 2.
 // 12 >> 2, 2, 3.
 
+Console.WriteLine("Практическая работа № 10. Задача № 3");
+Console.WriteLine("Дано натуральное число n > 1. Вывести все простые множители данного числа");
+
+Console.WriteLine("Введите n:");
+int lesson10task3VariableN = Convert.ToInt32(Console.ReadLine());
+while(lesson10task3VariableN < 1)
+{
+    Console.WriteLine("Ошибка! Число n должно быть больше 1!");
+    int lesson10task3VariableNTemp = Convert.ToInt32(Console.ReadLine());
+    lesson10task3VariableN = lesson10task3VariableNTemp;
+}
+
+// Решение без рекурсии
+/*
+void PrimeFactorNum(int num)
+{
+    for(int i = 1; i < num + 1; i++)
+    {
+        if(num % i == 0)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+
+PrimeFactorNum(lesson10task3VariableN);
+*/
+
+// Решение с рекурсией
+
+void PrimeFactorNumRec(int num, int index)
+{
+    if(num % index == 0)
+    {
+        Console.Write(index + " ");
+    }
+    index++;
+    if(index <= num)
+    {
+        PrimeFactorNumRec(num, index);
+    }  
+}
+
+Console.Write(lesson10task3VariableN + " >> ");
+PrimeFactorNumRec(lesson10task3VariableN, 1);
 
 // Практическая работа № 11
 
