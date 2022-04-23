@@ -2,6 +2,35 @@
 // M = 1; N = 9. -> "3, 6, 9"
 // M = 13; N = 20. -> "15, 18"
 
+Console.WriteLine("Задача 64. Задайте значения M и N. Напишите программу,");
+Console.WriteLine("которая выведет все натуральные числа кратные Num в промежутке от M до N.");
+
+Console.WriteLine("Введите n:");
+int task64VariableM = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите m:");
+int task64VariableN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите Num:");
+int task64VariableNum = Convert.ToInt32(Console.ReadLine());
+
+void MultiplicityNum(int variableM, int variableN, int num)
+{ 
+    //проверяем кратность и выводим найденные значения
+    for(int i = variableM; i < variableN + 1; i++)
+    {
+        if(i % num == 0)
+        {
+            Console.Write(i + " ");
+        }
+    }
+}
+
+Console.WriteLine("Числа кратные " + task64VariableNum + " :");
+MultiplicityNum(task64VariableM, task64VariableN, task64VariableNum);
+
+Console.WriteLine();
+Console.WriteLine();
+
+
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
@@ -132,24 +161,24 @@
 
 // Задача 3. Напишите рекурсивный метод, который принимает номер года и определяет, является ли он високосным или нет.
 
-Console.WriteLine("Введите год для проверки:");
-int year = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите год для проверки:");
+// int year = Convert.ToInt32(Console.ReadLine());
 
-string leapYear(int year)
-{
-    if(year % 100 == 0)
-    {
-        if(year % 400 == 0 ) return "Високосный"; 
-        else return "Не високосный";
-    } 
-    else 
-    {
-        if(year % 4 == 0 ) return "Високосный"; 
-        else return "Не високосный";
-    }    
-}
+// string leapYear(int year)
+// {
+//     if(year % 100 == 0)
+//     {
+//         if(year % 400 == 0 ) return "Високосный"; 
+//         else return "Не високосный";
+//     } 
+//     else 
+//     {
+//         if(year % 4 == 0 ) return "Високосный"; 
+//         else return "Не високосный";
+//     }    
+// }
 
-Console.WriteLine(leapYear(year));
+// Console.WriteLine(leapYear(year));
 
 /*// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 //Напишите программу, которая покажет количество чётных чисел в массиве.
