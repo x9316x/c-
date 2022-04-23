@@ -82,6 +82,35 @@
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 // m = 2, n = 3 -> A(n,m) = 29
 
+Console.WriteLine("Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии.");
+Console.WriteLine(" Даны два неотрицательных числа m и n.");
+
+Console.WriteLine("Введите m:");
+int task68VariableM = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите n:");
+int task68VariableN = Convert.ToInt32(Console.ReadLine());
+
+
+int AckermanAlgorithm(int variableM, int variableN)
+{
+    if (variableM == 0)
+    {
+      return variableN + 1;
+    }
+    else
+    {
+        if ((variableM != 0) && (variableN == 0))
+        {
+            return AckermanAlgorithm(variableM - 1, 1);
+        }
+        else
+        {
+            return AckermanAlgorithm(variableM - 1, AckermanAlgorithm(variableM, variableN - 1));
+        }
+    }     
+}
+
+Console.WriteLine(AckermanAlgorithm(task68VariableM, task68VariableN));
 
 // Практическая работа № 10
 
@@ -89,22 +118,22 @@
 // 345 >> 543
 // 81 >> 18
 
-Console.WriteLine("1. Дано число n. Получите число, записанное в обратном порядке.");
-Console.WriteLine("Введете число n:");
-int lesson10task1VariableN = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("1. Дано число n. Получите число, записанное в обратном порядке.");
+// Console.WriteLine("Введете число n:");
+// int lesson10task1VariableN = Convert.ToInt32(Console.ReadLine());
 
-void ReverseNum(int num)
-{
-    Console.Write(num % 10);
-    num = num / 10;
-    if(num > 0)
-    {
-        ReverseNum(num);
-    }
+// void ReverseNum(int num)
+// {
+//     Console.Write(num % 10);
+//     num = num / 10;
+//     if(num > 0)
+//     {
+//         ReverseNum(num);
+//     }
     
-}
-Console.Write(lesson10task1VariableN + " >> ");
-ReverseNum(lesson10task1VariableN);
+// }
+// Console.Write(lesson10task1VariableN + " >> ");
+// ReverseNum(lesson10task1VariableN);
 
 // 2. Дана монотонная последовательность, в которой каждое натуральное число n встречается ровно n раз: 
 // 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ... Дано число m. Выведите первые m членов этой последовательности.
