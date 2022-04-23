@@ -2,81 +2,81 @@
 // M = 1; N = 9. -> "3, 6, 9"
 // M = 13; N = 20. -> "15, 18"
 
-// Console.WriteLine("Задача 64. Задайте значения M и N. Напишите программу,");
-// Console.WriteLine("которая выведет все натуральные числа кратные Num в промежутке от M до N.");
+Console.WriteLine("Задача 64. Задайте значения M и N. Напишите программу,");
+Console.WriteLine("которая выведет все натуральные числа кратные Num в промежутке от M до N.");
 
-// Console.WriteLine("Введите M:");
-// int task64VariableM = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите N:");
-// int task64VariableN = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите Num:");
-// int task64VariableNum = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите M:");
+int task64VariableM = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите N:");
+int task64VariableN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите Num:");
+int task64VariableNum = Convert.ToInt32(Console.ReadLine());
 
-// void MultiplicityNum(int variableM, int variableN, int num)
-// { 
-//     // переменная для вывода значений по установленному образцу
-//     int writeIndex = 0;
+void MultiplicityNum(int variableM, int variableN, int num)
+{ 
+    // переменная для вывода значений по установленному образцу
+    int writeIndex = 0;
 
-//     // проверяем кратность и выводим найденные значения
-//     for(int i = variableM; i < variableN + 1; i++)
-//     {
-//         if(i % num == 0)
-//         {
-//             if(writeIndex == 1)
-//             {
-//                 Console.Write(", ");
-//                 writeIndex = 0;
-//             }
+    // проверяем кратность и выводим найденные значения
+    for(int i = variableM; i < variableN + 1; i++)
+    {
+        if(i % num == 0)
+        {
+            if(writeIndex == 1)
+            {
+                Console.Write(", ");
+                writeIndex = 0;
+            }
             
-//             Console.Write(i);
-//             writeIndex++;
-//         }
-//         if(i == variableN)
-//         {
-//             Console.Write("\" ");
-//         }
-//     }
-// }
+            Console.Write(i);
+            writeIndex++;
+        }
+        if(i == variableN)
+        {
+            Console.Write("\" ");
+        }
+    }
+}
 
-// Console.WriteLine("Числа кратные " + task64VariableNum + ":");
-// Console.Write("M = " + task64VariableM + " ; N = " + task64VariableN);
-// Console.Write(". -> \"");
-// MultiplicityNum(task64VariableM, task64VariableN, task64VariableNum);
+Console.WriteLine("Числа кратные " + task64VariableNum + ":");
+Console.Write("M = " + task64VariableM + " ; N = " + task64VariableN);
+Console.Write(". -> \"");
+MultiplicityNum(task64VariableM, task64VariableN, task64VariableNum);
 
-// Console.WriteLine();
-// Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
 
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
 
-// Console.WriteLine("Задача 66. Задайте значения M и N. Напишите программу,");
-// Console.WriteLine("которая найдёт сумму натуральных элементов в промежутке от M до N.");
+Console.WriteLine("Задача 66. Задайте значения M и N. Напишите программу,");
+Console.WriteLine("которая найдёт сумму натуральных элементов в промежутке от M до N.");
 
-// Console.WriteLine("Введите M:");
-// int task66VariableM = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите N:");
-// int task66VariableN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите M:");
+int task66VariableM = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите N:");
+int task66VariableN = Convert.ToInt32(Console.ReadLine());
 
-// int NaturalNumSum(int variableM, int variableN)
-// { 
-//     int sum = 0;
+int NaturalNumSum(int variableM, int variableN)
+{ 
+    int sum = 0;
     
-//     for(int i = variableM; i < variableN + 1; i++)
-//     {
-//         sum = sum + i;
-//     }
-//     return sum;
-// }
+    for(int i = variableM; i < variableN + 1; i++)
+    {
+        sum = sum + i;
+    }
+    return sum;
+}
 
-// Console.Write("M = " + task66VariableM + " ; N = " + task66VariableN);
-// Console.Write(". -> ");
+Console.Write("M = " + task66VariableM + " ; N = " + task66VariableN);
+Console.Write(". -> ");
 
-// Console.WriteLine(NaturalNumSum(task66VariableM, task66VariableN));
+Console.WriteLine(NaturalNumSum(task66VariableM, task66VariableN));
 
-// Console.WriteLine();
-// Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
 
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
@@ -99,7 +99,7 @@ int AckermanAlgorithm(int variableM, int variableN)
     }
     else
     {
-        if ((variableM != 0) && (variableN == 0))
+        if ((variableM != 0) & (variableN == 0))
         {
             return AckermanAlgorithm(variableM - 1, 1);
         }
@@ -110,7 +110,9 @@ int AckermanAlgorithm(int variableM, int variableN)
     }     
 }
 
-Console.WriteLine(AckermanAlgorithm(task68VariableM, task68VariableN));
+Console.WriteLine("Функция Аккермана: " + AckermanAlgorithm(task68VariableM, task68VariableN));
+Console.WriteLine();
+Console.WriteLine();
 
 // Практическая работа № 10
 
@@ -118,71 +120,75 @@ Console.WriteLine(AckermanAlgorithm(task68VariableM, task68VariableN));
 // 345 >> 543
 // 81 >> 18
 
-// Console.WriteLine("1. Дано число n. Получите число, записанное в обратном порядке.");
-// Console.WriteLine("Введете число n:");
-// int lesson10task1VariableN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("1. Дано число n. Получите число, записанное в обратном порядке.");
+Console.WriteLine("Введете число n:");
+int lesson10task1VariableN = Convert.ToInt32(Console.ReadLine());
 
-// void ReverseNum(int num)
-// {
-//     Console.Write(num % 10);
-//     num = num / 10;
-//     if(num > 0)
-//     {
-//         ReverseNum(num);
-//     }
+void ReverseNum(int num)
+{
+    Console.Write(num % 10);
+    num = num / 10;
+    if(num > 0)
+    {
+        ReverseNum(num);
+    }
     
-// }
-// Console.Write(lesson10task1VariableN + " >> ");
-// ReverseNum(lesson10task1VariableN);
+}
+Console.Write(lesson10task1VariableN + " >> ");
+ReverseNum(lesson10task1VariableN);
+Console.WriteLine();
+Console.WriteLine();
+
 
 // 2. Дана монотонная последовательность, в которой каждое натуральное число n встречается ровно n раз: 
 // 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ... Дано число m. Выведите первые m членов этой последовательности.
 // m = 5 >> 1, 2, 2, 3, 3
 
-// Console.WriteLine("Дана монотонная последовательность, в которой каждое натуральное число n встречается ровно n раз:");
-// Console.WriteLine("1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ... Дано число m. Выведите первые m членов этой последовательности.");
-// Console.WriteLine("m = 5 >> 1, 2, 2, 3, 3");
+Console.WriteLine("Дана монотонная последовательность, в которой каждое натуральное число n встречается ровно n раз:");
+Console.WriteLine("1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ... Дано число m. Выведите первые m членов этой последовательности.");
+Console.WriteLine("m = 5 >> 1, 2, 2, 3, 3");
 
-// Console.WriteLine("Введите M:");
-// int lesson10task2VariableM = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите M:");
+int lesson10task2VariableM = Convert.ToInt32(Console.ReadLine());
 
-// void MonotonicSequence(int M, int index, int count)
-// {
-//     for(int i = 0; i < index; i++)
-//     {
-//         if(count < lesson10task2VariableM)
-//         {
-//             Console.Write(index + " ");
-//             count++;
-//         }
+void MonotonicSequence(int M, int index, int count)
+{
+    for(int i = 0; i < index; i++)
+    {
+        if(count < lesson10task2VariableM)
+        {
+            Console.Write(index + " ");
+            count++;
+        }
         
-//     }
-//     index++;
-//     if(count < lesson10task2VariableM)
-//     {
-//         MonotonicSequence(lesson10task2VariableM, index, count);
-//     }
-// }
+    }
+    index++;
+    if(count < lesson10task2VariableM)
+    {
+        MonotonicSequence(lesson10task2VariableM, index, count);
+    }
+}
 
-// Console.Write(lesson10task2VariableM + " >> ");
-// MonotonicSequence(lesson10task2VariableM, 1, 0);
-
+Console.Write(lesson10task2VariableM + " >> ");
+MonotonicSequence(lesson10task2VariableM, 1, 0);
+Console.WriteLine();
+Console.WriteLine();
 
 // 3. Дано натуральное число n > 1. Вывести все простые множители данного числа.
 // 10 >> 5, 2.
 // 12 >> 2, 2, 3.
 
-// Console.WriteLine("Практическая работа № 10. Задача № 3");
-// Console.WriteLine("Дано натуральное число n > 1. Вывести все простые множители данного числа");
+Console.WriteLine("Практическая работа № 10. Задача № 3");
+Console.WriteLine("Дано натуральное число n > 1. Вывести все простые множители данного числа");
 
-// Console.WriteLine("Введите n:");
-// int lesson10task3VariableN = Convert.ToInt32(Console.ReadLine());
-// while(lesson10task3VariableN < 1)
-// {
-//     Console.WriteLine("Ошибка! Число n должно быть больше 1!");
-//     int lesson10task3VariableNTemp = Convert.ToInt32(Console.ReadLine());
-//     lesson10task3VariableN = lesson10task3VariableNTemp;
-// }
+Console.WriteLine("Введите n:");
+int lesson10task3VariableN = Convert.ToInt32(Console.ReadLine());
+while(lesson10task3VariableN < 1)
+{
+    Console.WriteLine("Ошибка! Число n должно быть больше 1!");
+    int lesson10task3VariableNTemp = Convert.ToInt32(Console.ReadLine());
+    lesson10task3VariableN = lesson10task3VariableNTemp;
+}
 
 // // Решение без рекурсии
 // /*
@@ -202,148 +208,152 @@ Console.WriteLine(AckermanAlgorithm(task68VariableM, task68VariableN));
 
 // // Решение с рекурсией
 
-// void PrimeFactorNumRec(int num, int index)
-// {
-//     if(num % index == 0)
-//     {
-//         Console.Write(index + " ");
-//     }
-//     index++;
-//     if(index <= num)
-//     {
-//         PrimeFactorNumRec(num, index);
-//     }  
-// }
+void PrimeFactorNumRec(int num, int index)
+{
+    if(num % index == 0)
+    {
+        Console.Write(index + " ");
+    }
+    index++;
+    if(index <= num)
+    {
+        PrimeFactorNumRec(num, index);
+    }  
+}
 
-// Console.Write(lesson10task3VariableN + " >> ");
-// PrimeFactorNumRec(lesson10task3VariableN, 1);
+Console.Write(lesson10task3VariableN + " >> ");
+PrimeFactorNumRec(lesson10task3VariableN, 1);
+Console.WriteLine();
+Console.WriteLine();
 
 // Практическая работа № 11
 
 // // Задача 1. На вход подуются два числа n и m, такие, что n<m. Заполните массив случайными числами из промежутка [n, m].
 
-// Console.WriteLine("Задача 1. На вход подуются два числа n и m, такие, что n<m.");
-// Console.WriteLine("Заполните массив случайными числами из промежутка [n, m]");
+Console.WriteLine("Задача 1. На вход подуются два числа n и m, такие, что n<m.");
+Console.WriteLine("Заполните массив случайными числами из промежутка [n, m]");
 
-// Console.WriteLine("Введите количество элементов в массиве:");
-// int lesson9Task1ArraySize = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите n:");
-// int lesson9Task1VariableN = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine("Введите m:");
-// int lesson9Task1VariableM = Convert.ToInt32(Console.ReadLine());
-// while(lesson9Task1VariableN >= lesson9Task1VariableM)
-// {
-//     Console.WriteLine("Ошибка, m должно быть больше чем n! Введите m:");
-//     int lesson9Task1VariableMTemp = Convert.ToInt32(Console.ReadLine());
-//     lesson9Task1VariableM = lesson9Task1VariableMTemp;
-// }
+Console.WriteLine("Введите количество элементов в массиве:");
+int lesson9Task1ArraySize = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите n:");
+int lesson9Task1VariableN = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите m:");
+int lesson9Task1VariableM = Convert.ToInt32(Console.ReadLine());
+while(lesson9Task1VariableN >= lesson9Task1VariableM)
+{
+    Console.WriteLine("Ошибка, m должно быть больше чем n! Введите m:");
+    int lesson9Task1VariableMTemp = Convert.ToInt32(Console.ReadLine());
+    lesson9Task1VariableM = lesson9Task1VariableMTemp;
+}
 
-// int[] randomArrayCreate(int variableN, int variableM, int arraySize)
-// {
-//     //задаем массив
-//     int[] randomArray = new int[arraySize];
+int[] randomArrayCreate(int variableN, int variableM, int arraySize)
+{
+    //задаем массив
+    int[] randomArray = new int[arraySize];
     
-//     //заполняем массив случайными числами от 100 до 999
-//     for(int i = 0; i < arraySize; i++)
-//     {
-//         randomArray[i] = new Random().Next(variableN, variableM + 1);
-//     }
+    //заполняем массив случайными числами от 100 до 999
+    for(int i = 0; i < arraySize; i++)
+    {
+        randomArray[i] = new Random().Next(variableN, variableM + 1);
+    }
 
-//     //выводим массив
-//     return randomArray;
-// }
+    //выводим массив
+    return randomArray;
+}
 
-// int[] showArray = randomArrayCreate(lesson9Task1VariableN, lesson9Task1VariableM, 10);
-// for(int i = 0; i < lesson9Task1ArraySize; i++)
-// {
-//     Console.Write(showArray[i] + " ");
-// }
+int[] showArray = randomArrayCreate(lesson9Task1VariableN, lesson9Task1VariableM, 10);
+for(int i = 0; i < lesson9Task1ArraySize; i++)
+{
+    Console.Write(showArray[i] + " ");
+}
 
-// Console.WriteLine();
-// Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
 
 // Задача 2. Двумерный массив заполнен случайными натуральными числами от 1 до 10. 
 // Найдите количество элементов, значение которых больше 5, и их сумму.
 
-// Console.WriteLine("Двумерный массив заполнен случайными натуральными числами от 1 до 10");
-// Console.WriteLine("Найдите количество элементов, значение которых больше 5, и их сумму");
+Console.WriteLine("Двумерный массив заполнен случайными натуральными числами от 1 до 10");
+Console.WriteLine("Найдите количество элементов, значение которых больше 5, и их сумму");
 
-// int[,] CreateTwoDimensionalrandomArray(int arraySizeM, int arraySizeN, int  rangeFrom, int rageTo)
-// {
-//     // задаем массив
-//     int[,] twoDimensionalArray = new int[arraySizeM, arraySizeN];
+int[,] CreateTwoDimensionalrandomArray(int arraySizeM, int arraySizeN, int  rangeFrom, int rageTo)
+{
+    // задаем массив
+    int[,] twoDimensionalArray = new int[arraySizeM, arraySizeN];
     
-//     // заполняем массив случайными числами
-//     for(int i = 0; i < arraySizeM; i++)
-//     {
-//         for(int j = 0; j < arraySizeN; j++)
-//         {
-//             twoDimensionalArray[i,j] = new Random().Next(rangeFrom, rageTo + 1);
-//         }
-//     }
+    // заполняем массив случайными числами
+    for(int i = 0; i < arraySizeM; i++)
+    {
+        for(int j = 0; j < arraySizeN; j++)
+        {
+            twoDimensionalArray[i,j] = new Random().Next(rangeFrom, rageTo + 1);
+        }
+    }
 
-//     // возвращаем массив
-//     return twoDimensionalArray;
-// }
+    // возвращаем массив
+    return twoDimensionalArray;
+}
 
-// // считаем количество элементов больше num
-// int countArrayGraiterNum(int num, int[,] twoDimensionalRandomArray)
-// {
-//     int sum = 0;
+// считаем количество элементов больше num
+int countArrayGraiterNum(int num, int[,] twoDimensionalRandomArray)
+{
+    int sum = 0;
     
-//     for(int i = 0; i < twoDimensionalRandomArray.GetLength(0); i++)
-//     {
-//         for(int j = 0; j < twoDimensionalRandomArray.GetLength(1); j++)
-//         {
-//             if(twoDimensionalRandomArray[i,j] > 5)
-//             {
-//                 sum++;
-//             }
-//         }
-//     }
-//     return sum;
-// }
+    for(int i = 0; i < twoDimensionalRandomArray.GetLength(0); i++)
+    {
+        for(int j = 0; j < twoDimensionalRandomArray.GetLength(1); j++)
+        {
+            if(twoDimensionalRandomArray[i,j] > 5)
+            {
+                sum++;
+            }
+        }
+    }
+    return sum;
+}
 
-// // печатаем массив в консоль
-// Console.Write("Массив, заполненый случайными натуральными числами:");
-// int[,] printArray = CreateTwoDimensionalrandomArray (4, 4, 1, 10);
-// for(int i = 0; i < 4; i++)
-// {
-//     Console.WriteLine();
-//     for(int j = 0; j < 4; j++)
-//     {
-//         Console.Write(printArray[i,j] + " ");
-//     }
-// }
+// печатаем массив в консоль
+Console.Write("Массив, заполненый случайными натуральными числами:");
+int[,] printArray = CreateTwoDimensionalrandomArray (4, 4, 1, 10);
+for(int i = 0; i < 4; i++)
+{
+    Console.WriteLine();
+    for(int j = 0; j < 4; j++)
+    {
+        Console.Write(printArray[i,j] + " ");
+    }
+}
 
 
-// Console.WriteLine();
-// Console.WriteLine("Количество искомых элементов:");
-// Console.WriteLine(countArrayGraiterNum(5, printArray));
+Console.WriteLine();
+Console.WriteLine("Количество искомых элементов:");
+Console.WriteLine(countArrayGraiterNum(5, printArray));
 
-// Console.WriteLine();
-// Console.WriteLine();
+Console.WriteLine();
+Console.WriteLine();
 
 // Задача 3. Напишите рекурсивный метод, который принимает номер года и определяет, является ли он високосным или нет.
 
-// Console.WriteLine("Введите год для проверки:");
-// int year = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите год для проверки:");
+int year = Convert.ToInt32(Console.ReadLine());
 
-// string leapYear(int year)
-// {
-//     if(year % 100 == 0)
-//     {
-//         if(year % 400 == 0 ) return "Високосный"; 
-//         else return "Не високосный";
-//     } 
-//     else 
-//     {
-//         if(year % 4 == 0 ) return "Високосный"; 
-//         else return "Не високосный";
-//     }    
-// }
+string leapYear(int year)
+{
+    if(year % 100 == 0)
+    {
+        if(year % 400 == 0 ) return "Високосный"; 
+        else return "Не високосный";
+    } 
+    else 
+    {
+        if(year % 4 == 0 ) return "Високосный"; 
+        else return "Не високосный";
+    }    
+}
 
-// Console.WriteLine(leapYear(year));
+Console.WriteLine(leapYear(year));
+Console.WriteLine();
+Console.WriteLine();
 
 /*// Task 34: Задайте массив заполненный случайными положительными трёхзначными числами. 
 //Напишите программу, которая покажет количество чётных чисел в массиве.
