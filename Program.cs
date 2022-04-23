@@ -2,38 +2,82 @@
 // M = 1; N = 9. -> "3, 6, 9"
 // M = 13; N = 20. -> "15, 18"
 
-Console.WriteLine("Задача 64. Задайте значения M и N. Напишите программу,");
-Console.WriteLine("которая выведет все натуральные числа кратные Num в промежутке от M до N.");
+// Console.WriteLine("Задача 64. Задайте значения M и N. Напишите программу,");
+// Console.WriteLine("которая выведет все натуральные числа кратные Num в промежутке от M до N.");
 
-Console.WriteLine("Введите n:");
-int task64VariableM = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите m:");
-int task64VariableN = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine("Введите Num:");
-int task64VariableNum = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите M:");
+// int task64VariableM = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите N:");
+// int task64VariableN = Convert.ToInt32(Console.ReadLine());
+// Console.WriteLine("Введите Num:");
+// int task64VariableNum = Convert.ToInt32(Console.ReadLine());
 
-void MultiplicityNum(int variableM, int variableN, int num)
-{ 
-    //проверяем кратность и выводим найденные значения
-    for(int i = variableM; i < variableN + 1; i++)
-    {
-        if(i % num == 0)
-        {
-            Console.Write(i + " ");
-        }
-    }
-}
+// void MultiplicityNum(int variableM, int variableN, int num)
+// { 
+//     // переменная для вывода значений по установленному образцу
+//     int writeIndex = 0;
 
-Console.WriteLine("Числа кратные " + task64VariableNum + " :");
-MultiplicityNum(task64VariableM, task64VariableN, task64VariableNum);
+//     // проверяем кратность и выводим найденные значения
+//     for(int i = variableM; i < variableN + 1; i++)
+//     {
+//         if(i % num == 0)
+//         {
+//             if(writeIndex == 1)
+//             {
+//                 Console.Write(", ");
+//                 writeIndex = 0;
+//             }
+            
+//             Console.Write(i);
+//             writeIndex++;
+//         }
+//         if(i == variableN)
+//         {
+//             Console.Write("\" ");
+//         }
+//     }
+// }
 
-Console.WriteLine();
-Console.WriteLine();
+// Console.WriteLine("Числа кратные " + task64VariableNum + ":");
+// Console.Write("M = " + task64VariableM + " ; N = " + task64VariableN);
+// Console.Write(". -> \"");
+// MultiplicityNum(task64VariableM, task64VariableN, task64VariableNum);
+
+// Console.WriteLine();
+// Console.WriteLine();
 
 
 // Задача 66: Задайте значения M и N. Напишите программу, которая найдёт сумму натуральных элементов в промежутке от M до N.
 // M = 1; N = 15 -> 120
 // M = 4; N = 8. -> 30
+
+Console.WriteLine("Задача 66. Задайте значения M и N. Напишите программу,");
+Console.WriteLine("которая найдёт сумму натуральных элементов в промежутке от M до N.");
+
+Console.WriteLine("Введите M:");
+int task66VariableM = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("Введите N:");
+int task66VariableN = Convert.ToInt32(Console.ReadLine());
+
+int NaturalNumSum(int variableM, int variableN)
+{ 
+    int sum = 0;
+    
+    for(int i = variableM; i < variableN + 1; i++)
+    {
+        sum = sum + i;
+    }
+    return sum;
+}
+
+Console.Write("M = " + task66VariableM + " ; N = " + task66VariableN);
+Console.Write(". -> ");
+
+Console.WriteLine(NaturalNumSum(task66VariableM, task66VariableN));
+
+Console.WriteLine();
+Console.WriteLine();
+
 
 // Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.
 // m = 2, n = 3 -> A(n,m) = 29
