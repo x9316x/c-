@@ -93,55 +93,80 @@
 // 1, 2, 2, 3, 3, 3, 4, 4, 4, 4, ... Дано число m. Выведите первые m членов этой последовательности.
 // m = 5 >> 1, 2, 2, 3, 3
 
+Console.WriteLine("Введите M:");
+int lesson10task2VariableM = Convert.ToInt32(Console.ReadLine());
+
+void MonotonicSequence(int M, int index, int count)
+{
+    for(int i = 0; i < index; i++)
+    {
+        if(count < lesson10task2VariableM)
+        {
+            Console.Write(index + " ");
+            count++;
+        }
+        
+    }
+    index++;
+    if(count < lesson10task2VariableM)
+    {
+        MonotonicSequence(lesson10task2VariableM, index, count);
+    }
+}
+
+Console.Write(lesson10task2VariableM + " >> ");
+MonotonicSequence(lesson10task2VariableM, 1, 0);
+
+
 // 3. Дано натуральное число n > 1. Вывести все простые множители данного числа.
 // 10 >> 5, 2.
 // 12 >> 2, 2, 3.
 
-Console.WriteLine("Практическая работа № 10. Задача № 3");
-Console.WriteLine("Дано натуральное число n > 1. Вывести все простые множители данного числа");
+// Console.WriteLine("Практическая работа № 10. Задача № 3");
+// Console.WriteLine("Дано натуральное число n > 1. Вывести все простые множители данного числа");
 
-Console.WriteLine("Введите n:");
-int lesson10task3VariableN = Convert.ToInt32(Console.ReadLine());
-while(lesson10task3VariableN < 1)
-{
-    Console.WriteLine("Ошибка! Число n должно быть больше 1!");
-    int lesson10task3VariableNTemp = Convert.ToInt32(Console.ReadLine());
-    lesson10task3VariableN = lesson10task3VariableNTemp;
-}
+// Console.WriteLine("Введите n:");
+// int lesson10task3VariableN = Convert.ToInt32(Console.ReadLine());
+// while(lesson10task3VariableN < 1)
+// {
+//     Console.WriteLine("Ошибка! Число n должно быть больше 1!");
+//     int lesson10task3VariableNTemp = Convert.ToInt32(Console.ReadLine());
+//     lesson10task3VariableN = lesson10task3VariableNTemp;
+// }
 
-// Решение без рекурсии
-/*
-void PrimeFactorNum(int num)
-{
-    for(int i = 1; i < num + 1; i++)
-    {
-        if(num % i == 0)
-        {
-            Console.WriteLine(i);
-        }
-    }
-}
+// // Решение без рекурсии
+// /*
+// void PrimeFactorNum(int num)
+// {
+//     for(int i = 1; i < num + 1; i++)
+//     {
+//         if(num % i == 0)
+//         {
+//             Console.WriteLine(i);
+//         }
+//     }
+// }
 
-PrimeFactorNum(lesson10task3VariableN);
-*/
+// PrimeFactorNum(lesson10task3VariableN);
+// */
 
-// Решение с рекурсией
+// // Решение с рекурсией
 
-void PrimeFactorNumRec(int num, int index)
-{
-    if(num % index == 0)
-    {
-        Console.Write(index + " ");
-    }
-    index++;
-    if(index <= num)
-    {
-        PrimeFactorNumRec(num, index);
-    }  
-}
+// void PrimeFactorNumRec(int num, int index)
+// {
+//     if(num % index == 0)
+//     {
+//         Console.Write(index + " ");
+//     }
+//     index++;
+//     if(index <= num)
+//     {
+//         PrimeFactorNumRec(num, index);
+//     }  
+// }
 
-Console.Write(lesson10task3VariableN + " >> ");
-PrimeFactorNumRec(lesson10task3VariableN, 1);
+// Console.Write(lesson10task3VariableN + " >> ");
+// PrimeFactorNumRec(lesson10task3VariableN, 1);
 
 // Практическая работа № 11
 
